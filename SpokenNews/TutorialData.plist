@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>image</key>
+		<string>t1</string>
+		<key>description</key>
+		<string>歡迎使用 Spoken News. 這個 App 可以幫你在駕駛時，一路收聽你的 iPod 音樂，一路透過語音合成系統報告交通及快相雷達的狀況。</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>t2</string>
+		<key>description</key>
+		<string>主畫面上半部是報告交通新聞，你可以撥上/下來閱讀新聞；而下半部是顯示快相雷達與你的距離。</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>t3</string>
+		<key>description</key>
+		<string>接 Home 鍵跳出主畫面後，你可以開啟你愛的播音 App。 Spoken News 會繼續監測交通新聞及固定快相機位置。有更新就會閱讀及發出通知，而不會影響你收聽音樂。</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>t4</string>
+		<key>description</key>
+		<string>你亦可以隨你需要更改 App 的設定如停止發聲，停止通知及調整 GPS 精度等。我們亦歡迎你就此 App 提供意見及回報問題。</string>
+	</dict>
+	<dict>
+		<key>image</key>
+		<string>t5</string>
+		<key>description</key>
+		<string>當你駕駛完請不要忘了關掉 App 唷，不然這個 App 會加速你的裝置的電量消耗。</string>
+	</dict>
+</array>
+</plist>

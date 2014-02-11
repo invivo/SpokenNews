@@ -1,0 +1,2014 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>StationarySpeedRadar</name>
+  <description><![CDATA[]]></description>
+  <Style id="style72">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style74">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style115">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style111">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style63">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style22">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style107">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style91">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style122">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style99">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style41">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style45">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style118">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style101">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style57">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style61">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style43">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style60">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style82">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style79">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style80">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style69">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style2">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style86">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style44">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style16">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style97">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style58">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style108">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style30">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style14">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style18">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style51">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style49">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style104">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style67">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style20">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style52">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style73">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style24">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style11">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style3">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style78">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style70">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style112">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style87">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style116">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style34">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style77">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style98">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style55">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style46">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style42">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style71">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style121">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style31">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style59">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style83">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style26">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style17">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style47">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style15">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style100">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style89">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style32">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style92">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style62">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style81">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style66">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style110">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style40">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style37">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style75">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style38">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style35">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style123">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style29">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style10">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style93">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style68">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style94">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style102">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style28">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style25">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style56">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style106">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style113">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style33">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style105">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style54">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style39">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style119">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style36">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style53">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style103">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style90">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style12">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style21">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style96">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style109">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style84">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style27">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style65">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style48">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style64">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style50">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style88">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style114">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style23">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style117">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style85">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style19">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style95">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style13">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style120">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style76">
+    <IconStyle>
+      <Icon>
+        <href>http://www.hiplick.com/detector-online/google_map/mapstick_camera.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>港島-東區走廊 (編號001)</name>
+    <description><![CDATA[
+地區：港島 快速公路：東區走廊 行車方向：柴灣 鄰近位置：東區海底隧道入囗]]></description>
+    <styleUrl>#style72</styleUrl>
+    <Point>
+      <coordinates>114.214241,22.290020,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-東區走廊 (編號002)</name>
+    <description><![CDATA[<div>
+地區：港島 快速公路：東區走廊 行車方向：柴灣 鄰近位置：側魚涌公園
+]]></description>
+    <styleUrl>#style74</styleUrl>
+    <Point>
+      <coordinates>114.216660,22.289413,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-東區走廊 (編號003)</name>
+    <description><![CDATA[地區：港島 快速公路：東區走廊 行車方向：柴灣 鄰近位置：海防博物館
+]]></description>
+    <styleUrl>#style115</styleUrl>
+    <Point>
+      <coordinates>114.235191,22.281080,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-東區走廊 (編號004)</name>
+    <description><![CDATA[地區：港島 快速公路：東區走廊 行車方向：銅鑼灣鄰近位置：阿公岩
+]]></description>
+    <styleUrl>#style111</styleUrl>
+    <Point>
+      <coordinates>114.235863,22.280029,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-東區走廊 (編號005)</name>
+    <description><![CDATA[地區：港島 快速公路：東區走廊 行車方向：九龍鄰近位置：東區走廊東隧入口
+]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>114.213593,22.288094,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號006)</name>
+    <description><![CDATA[地區：離島 快速公路：北大嶼山公路 行車方向：機場 鄰近位置：陰澳
+]]></description>
+    <styleUrl>#style63</styleUrl>
+    <Point>
+      <coordinates>114.017242,22.324829,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號007)</name>
+    <description><![CDATA[地區：離島 快速公路：北大嶼山公路 行車方向：機場 鄰近位置：深水角
+]]></description>
+    <styleUrl>#style22</styleUrl>
+    <Point>
+      <coordinates>114.003860,22.321445,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號008)</name>
+    <description><![CDATA[
+地區：離島 快速公路：北大嶼山公路 行車方向：機場 鄰近位置：小蠔灣
+]]></description>
+    <styleUrl>#style107</styleUrl>
+    <Point>
+      <coordinates>113.997620,22.316690,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號009)</name>
+    <description><![CDATA[
+地區：離島 快速公路：北大嶼山公路 行車方向：機場 鄰近位置：小蠔灣
+]]></description>
+    <styleUrl>#style91</styleUrl>
+    <Point>
+      <coordinates>113.991615,22.310896,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號010)</name>
+    <description><![CDATA[
+地區：離島 快速公路：北大嶼山公路 行車方向：機場 鄰近位置：機場鐵路車廠
+]]></description>
+    <styleUrl>#style122</styleUrl>
+    <Point>
+      <coordinates>113.983421,22.305977,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號011)</name>
+    <description><![CDATA[
+地區：離島 快速公路：北大嶼山公路 行車方向：機場 鄰近位置：大蠔灣
+>]]></description>
+    <styleUrl>#style99</styleUrl>
+    <Point>
+      <coordinates>113.967506,22.298542,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號012)</name>
+    <description><![CDATA[
+地區：離島 快速公路：北大嶼山公路 行車方向：機場 鄰近位置：映灣園
+]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>113.953506,22.292997,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號014)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：屯門 鄰近位置：往大欖隧道(青朗公路)支路
+]]></description>
+    <styleUrl>#style41</styleUrl>
+    <Point>
+      <coordinates>114.078339,22.371452,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號015)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：屯門 鄰近位置：新汀九橋支路(青朗公路)匯合處
+]]></description>
+    <styleUrl>#style45</styleUrl>
+    <Point>
+      <coordinates>114.072777,22.369144,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號019)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：屯門 鄰近位置：嘉才里
+]]></description>
+    <styleUrl>#style118</styleUrl>
+    <Point>
+      <coordinates>113.999161,22.371012,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號021)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：屯門 鄰近位置：屯門市廣場
+]]></description>
+    <styleUrl>#style101</styleUrl>
+    <Point>
+      <coordinates>113.977699,22.390587,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號022)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：屯門 鄰近位置：青賢街
+]]></description>
+    <styleUrl>#style57</styleUrl>
+    <Point>
+      <coordinates>113.976707,22.399523,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號023)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：屯門 鄰近位置：新墟遊樂場
+]]></description>
+    <styleUrl>#style61</styleUrl>
+    <Point>
+      <coordinates>113.978058,22.405952,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號024)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：荃灣 鄰近位置：井財街-紅橋
+]]></description>
+    <styleUrl>#style43</styleUrl>
+    <Point>
+      <coordinates>113.977203,22.400837,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號025)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路
+]]></description>
+    <styleUrl>#style60</styleUrl>
+    <Point>
+      <coordinates>113.976898,22.394222,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號026)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：荃灣 鄰近位置：嘉才里
+]]></description>
+    <styleUrl>#style82</styleUrl>
+    <Point>
+      <coordinates>113.997917,22.373383,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門公路 (編號028)</name>
+    <description><![CDATA[地區：新界 快速公路：屯門公路 行車方向：荃灣 鄰近位置：汀九橋
+]]></description>
+    <styleUrl>#style79</styleUrl>
+    <Point>
+      <coordinates>114.085274,22.369682,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-新田公路 (編號029)</name>
+    <description><![CDATA[地區：新界 快速公路：新田公路 行車方向：粉嶺 鄰近位置：壆圍
+]]></description>
+    <styleUrl>#style80</styleUrl>
+    <Point>
+      <coordinates>114.053329,22.463388,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-新田公路 (編號030)</name>
+    <description><![CDATA[地區：新界 快速公路：新田公路 行車方向：粉嶺 鄰近位置：和生圍
+]]></description>
+    <styleUrl>#style69</styleUrl>
+    <Point>
+      <coordinates>114.058228,22.481606,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-新田公路 (編號031)</name>
+    <description><![CDATA[地區：新界 快速公路：新田公路 行車方向：元朗 鄰近位置：石湖圍
+]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>114.075356,22.495331,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-新田公路 (編號032)</name>
+    <description><![CDATA[地區：新界 快速公路：新田公路 行車方向：元朗 鄰近位置：牛潭尾
+]]></description>
+    <styleUrl>#style86</styleUrl>
+    <Point>
+      <coordinates>114.058456,22.481556,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-新田公路 (編號033)</name>
+    <description><![CDATA[地區：新界 快速公路：新田公路 行車方向：元朗 鄰近位置：下竹園
+]]></description>
+    <styleUrl>#style44</styleUrl>
+    <Point>
+      <coordinates>114.053864,22.464523,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號034)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：泰亨
+]]></description>
+    <styleUrl>#style16</styleUrl>
+    <Point>
+      <coordinates>114.152924,22.470339,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號035)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：橋頭
+]]></description>
+    <styleUrl>#style97</styleUrl>
+    <Point>
+      <coordinates>114.153648,22.479311,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號036)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：蓬嬴仙館
+]]></description>
+    <styleUrl>#style58</styleUrl>
+    <Point>
+      <coordinates>114.136429,22.493347,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號037)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：嘉盛苑
+]]></description>
+    <styleUrl>#style108</styleUrl>
+    <Point>
+      <coordinates>114.136391,22.493458,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號038)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：金錢
+]]></description>
+    <styleUrl>#style30</styleUrl>
+    <Point>
+      <coordinates>114.111610,22.502457,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號039)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：古洞
+]]></description>
+    <styleUrl>#style14</styleUrl>
+    <Point>
+      <coordinates>114.099701,22.503439,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號041)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：沙田 鄰近位置：白石凹
+]]></description>
+    <styleUrl>#style18</styleUrl>
+    <Point>
+      <coordinates>114.106667,22.502764,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號042)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：沙田 鄰近位置：古洞
+]]></description>
+    <styleUrl>#style51</styleUrl>
+    <Point>
+      <coordinates>114.108292,22.502943,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-粉嶺公路 (編號043)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：沙田 鄰近位置：九龍坑老圍
+]]></description>
+    <styleUrl>#style49</styleUrl>
+    <Point>
+      <coordinates>114.153709,22.480530,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔公路(近康樂園) (編號044)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：康樂園至新界
+]]></description>
+    <styleUrl>#style104</styleUrl>
+    <Point>
+      <coordinates>114.149963,22.465273,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔公路(近康樂園) (編號045)</name>
+    <description><![CDATA[地區：新界 快速公路：粉嶺公路 行車方向：元朗 鄰近位置：康樂園至九龍
+]]></description>
+    <styleUrl>#style67</styleUrl>
+    <Point>
+      <coordinates>114.151360,22.466364,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號046)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：大埔 鄰近位置：馬場對面
+]]></description>
+    <styleUrl>#style20</styleUrl>
+    <Point>
+      <coordinates>114.207268,22.404934,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號047)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：大埔 鄰近位置：馬料水橋
+]]></description>
+    <styleUrl>#style52</styleUrl>
+    <Point>
+      <coordinates>114.213226,22.416597,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號048)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：大埔 鄰近位置：香港中文大學
+]]></description>
+    <styleUrl>#style73</styleUrl>
+    <Point>
+      <coordinates>114.207367,22.426441,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號049)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：大埔 鄰近位置：大埔滘
+]]></description>
+    <styleUrl>#style24</styleUrl>
+    <Point>
+      <coordinates>114.186295,22.439451,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號053)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：沙田 鄰近位置：水圍
+]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>114.153244,22.451500,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號055)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：沙田 鄰近位置：元州仔
+]]></description>
+    <styleUrl>#style11</styleUrl>
+    <Point>
+      <coordinates>114.182648,22.441832,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號056)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：沙田 鄰近位置：大學站交匯處
+]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>114.209000,22.425716,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號057)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：沙田 鄰近位置：2號幹線橋底
+]]></description>
+    <styleUrl>#style78</styleUrl>
+    <Point>
+      <coordinates>114.213661,22.417500,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號058)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：沙田 鄰近位置：馬場
+ ]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>114.212502,22.411713,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-吐露港公路 (編號059)</name>
+    <description><![CDATA[地區：新界 快速公路：吐露港公路 行車方向：沙田 鄰近位置：馬場
+]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>114.208038,22.405205,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔公路 (編號060)</name>
+    <description><![CDATA[地區：新界 快速公路：大埔公路-沙田段 行車方向：荃灣 鄰近位置：沙田新城市廣場
+]]></description>
+    <styleUrl>#style70</styleUrl>
+    <Point>
+      <coordinates>114.187721,22.382273,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔公路 (編號061)</name>
+    <description><![CDATA[地區：新界 快速公路：大埔公路-沙田段 行車方向：荃灣 鄰近位置：沙田警署
+]]></description>
+    <styleUrl>#style112</styleUrl>
+    <Point>
+      <coordinates>114.192825,22.388298,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-獅子山隧道公路 (編號062)</name>
+    <description><![CDATA[地區：新界 快速公路：獅子山隧道公路 行車方向：大埔 鄰近位置：隔田村
+]]></description>
+    <styleUrl>#style87</styleUrl>
+    <Point>
+      <coordinates>114.184631,22.365995,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-獅子山隧道公路 (編號063)</name>
+    <description><![CDATA[地區：新界 快速公路：獅子山隧道公路 行車方向：九龍 鄰近位置：紅梅谷
+]]></description>
+    <styleUrl>#style116</styleUrl>
+    <Point>
+      <coordinates>114.184196,22.365580,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-沙田路 (編號064)</name>
+    <description><![CDATA[地區：新界 快速公路：沙田路 行車方向：大埔 鄰近位置：王屋村
+]]></description>
+    <styleUrl>#style34</styleUrl>
+    <Point>
+      <coordinates>114.200157,22.379868,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-沙田路 (編號065)</name>
+    <description><![CDATA[地區：新界 快速公路：沙田路 行車方向：大埔 鄰近位置：博康村
+]]></description>
+    <styleUrl>#style77</styleUrl>
+    <Point>
+      <coordinates>114.193451,22.374027,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-沙田路 (編號066)</name>
+    <description><![CDATA[地區：新界 快速公路：沙田路 行車方向：九龍 鄰近位置：沙田圍新村
+]]></description>
+    <styleUrl>#style98</styleUrl>
+    <Point>
+      <coordinates>114.195824,22.374418,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-港深西部公路 (編號067)</name>
+    <description><![CDATA[
+地區：新界 快速公路：港深西部公路 行車方向：深圳 鄰近位置：未接駁分叉路口
+]]></description>
+    <styleUrl>#style55</styleUrl>
+    <Point>
+      <coordinates>113.983635,22.424650,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-港深西部公路 (編號068)</name>
+    <description><![CDATA[
+地區：新界 快速公路：港深西部公路 行車方向：深圳 鄰近位置：未到1號出口
+]]></description>
+    <styleUrl>#style46</styleUrl>
+    <Point>
+      <coordinates>113.985313,22.438499,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-港深西部公路 (編號069)</name>
+    <description><![CDATA[
+地區：新界 快速公路：港深西部公路 行車方向：深圳 鄰近位置：未接駁匯合路口
+]]></description>
+    <styleUrl>#style42</styleUrl>
+    <Point>
+      <coordinates>113.983505,22.425297,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-元朗公路 (編號070)</name>
+    <description><![CDATA[
+地區：新界 快速公路：元朗公路 行車方向：元朗 鄰近位置：港深西部公路橋底
+]]></description>
+    <styleUrl>#style71</styleUrl>
+    <Point>
+      <coordinates>113.992790,22.419439,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-元朗公路  (編號071)</name>
+    <description><![CDATA[
+地區：新界 快速公路：元朗公路 行車方向：元朗 鄰近位置：未到元朗(南)13號出口
+]]></description>
+    <styleUrl>#style121</styleUrl>
+    <Point>
+      <coordinates>114.025734,22.434795,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-元朗公路 (編號072)</name>
+    <description><![CDATA[
+地區：新界 快速公路：元朗公路 行車方向：屯門 鄰近位置：未到天水圍(東)14號出口
+]]></description>
+    <styleUrl>#style31</styleUrl>
+    <Point>
+      <coordinates>114.023460,22.435089,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-元朗公路  (編號073)</name>
+    <description><![CDATA[
+地區：新界 快速公路：元朗公路 行車方向：屯門 鄰近位置：未到虎地16號出口
+]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>114.001144,22.428499,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大老山公路 (編號074)</name>
+    <description><![CDATA[
+地區：新界 快速公路：大老山公路 行車方向：沙田 鄰近位置：沙田醫院
+]]></description>
+    <styleUrl>#style59</styleUrl>
+    <Point>
+      <coordinates>114.213684,22.400747,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大老山公路 (編號075)</name>
+    <description><![CDATA[
+地區：新界 快速公路：大老山公路 行車方向：沙田 鄰近位置：石門回旋處匯合處 ]]></description>
+    <styleUrl>#style83</styleUrl>
+    <Point>
+      <coordinates>114.210281,22.390482,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-青沙公路 (編號076)</name>
+    <description><![CDATA[
+地區：九龍 快速公路：青沙公路 行車方向：沙田 鄰近位置：荔枝角懲教所對開隔音屏出口
+]]></description>
+    <styleUrl>#style26</styleUrl>
+    <Point>
+      <coordinates>114.144676,22.336679,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-青沙公路 (編號077)</name>
+    <description><![CDATA[
+地區：九龍 快速公路：青沙公路 行車方向：沙田 鄰近位置：青沙隧道管道入口後1000米
+]]></description>
+    <styleUrl>#style17</styleUrl>
+    <Point>
+      <coordinates>114.155960,22.349901,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-香港仔 (編號078)</name>
+    <description><![CDATA[
+地區：香港仔 街道名稱: 香港仔海旁道 行車方向：灣仔 鄰近位置：香港仔湖南街巴士總站
+]]></description>
+    <styleUrl>#style47</styleUrl>
+    <Point>
+      <coordinates>114.154770,22.247475,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-香港仔 (編號079)</name>
+    <description><![CDATA[
+地區：香港仔 街道名稱: 香港仔海旁道 行車方向：薄扶林 鄰近位置：香港仔魚類批發巿場
+]]></description>
+    <styleUrl>#style15</styleUrl>
+    <Point>
+      <coordinates>114.152039,22.248098,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-薄扶林 (編號080)</name>
+    <description><![CDATA[地區：薄扶林 街道名稱：薄扶林道 行車方向：<span style="font-size:small">香港仔 </span>鄰近位置：余振強紀念第二中學
+]]></description>
+    <styleUrl>#style100</styleUrl>
+    <Point>
+      <coordinates>114.137405,22.256769,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-灣仔 (編號081)</name>
+    <description><![CDATA[地區：灣仔 街道名稱：告士打道 行車方向：北角 鄰近位置：灣仔香港演藝學院
+]]></description>
+    <styleUrl>#style89</styleUrl>
+    <Point>
+      <coordinates>114.169395,22.279646,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-柴灣 (編號082)</name>
+    <description><![CDATA[地區：柴灣  街道名稱：柴灣道 行車方向：筲萁灣 鄰近位置：筲萁灣官立中學
+]]></description>
+    <styleUrl>#style32</styleUrl>
+    <Point>
+      <coordinates>114.232986,22.271788,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-柴灣 (編號083)</name>
+    <description><![CDATA[地區：柴灣 街道名稱：柴灣道 行車方向：柴灣 鄰近位置：康文街
+]]></description>
+    <styleUrl>#style92</styleUrl>
+    <Point>
+      <coordinates>114.233589,22.267628,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-側魚涌 (編號084)</name>
+    <description><![CDATA[
+地區：側魚涌 街道名稱：百福道 行車方向：側魚涌 鄰近位置：健康街
+]]></description>
+    <styleUrl>#style62</styleUrl>
+    <Point>
+      <coordinates>114.207382,22.290482,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-北角 (編號085)</name>
+    <description><![CDATA[
+
+地區：北角 街道名稱：雲景道 行車方向：北角 鄰近位置：張祝珊英文中學
+]]></description>
+    <styleUrl>#style81</styleUrl>
+    <Point>
+      <coordinates>114.195145,22.285564,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-西環 (編號086)</name>
+    <description><![CDATA[
+地區：西區 街道名稱：士美菲路 行車方向：西環 鄰近位置：龍華街
+]]></description>
+    <styleUrl>#style66</styleUrl>
+    <Point>
+      <coordinates>114.129509,22.279720,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-薄扶林 (編號087)</name>
+    <description><![CDATA[
+地區：薄扶林 街道名稱：沙宣道 行車方向：域多利道 鄰近位置：羅富國徑
+]]></description>
+    <styleUrl>#style110</styleUrl>
+    <Point>
+      <coordinates>114.129417,22.268904,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-中環 (編號088)</name>
+    <description><![CDATA[
+地區：中環 街道名稱：花園道 行車方向：中環 鄰近位置：美國領事館
+]]></description>
+    <styleUrl>#style40</styleUrl>
+    <Point>
+      <coordinates>114.157944,22.277536,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-跑馬地 (編號089)</name>
+    <description><![CDATA[
+地區：跑馬地 街道名稱：藍塘道 行車方向：灣仔 鄰近位置：箕璉坊
+]]></description>
+    <styleUrl>#style37</styleUrl>
+    <Point>
+      <coordinates>114.189163,22.263268,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>港島-香港仔 (編號090)</name>
+    <description><![CDATA[
+地區：香港仔 街道名稱：香港仔水塘道 行車方向：香港仔市中心 鄰近位置：香港仔賽馬會診所對開]]></description>
+    <styleUrl>#style75</styleUrl>
+    <Point>
+      <coordinates>114.156410,22.250479,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大圍(馬騮山) (編號091)</name>
+    <description><![CDATA[
+地區：大圍 街道名稱：大埔公路-沙田嶺段北行 行車方向：大圍 鄰近位置：桂園]]></description>
+    <styleUrl>#style38</styleUrl>
+    <Point>
+      <coordinates>114.170059,22.367607,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大圍(馬騮山) (編號092)</name>
+    <description><![CDATA[
+地區：大圍 街道名稱：大埔公路-沙田嶺段北行 行車方向：大圍 鄰近位置：蜆殼油站
+]]></description>
+    <styleUrl>#style35</styleUrl>
+    <Point>
+      <coordinates>114.161743,22.360718,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大圍(馬騮山) (編號093)</name>
+    <description><![CDATA[
+地區：新界 街道名稱：大埔公路-沙田嶺段北行 行車方向：九龍 鄰近位置：牡丹園
+]]></description>
+    <styleUrl>#style123</styleUrl>
+    <Point>
+      <coordinates>114.162537,22.361437,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門 (編號094)</name>
+    <description><![CDATA[地區：屯門 街道名稱：青山公路-大欖段南行 行車方向：荃灣 鄰近位置：海員訓練中心
+]]></description>
+    <styleUrl>#style29</styleUrl>
+    <Point>
+      <coordinates>114.019150,22.359612,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門 (編號095)</name>
+    <description><![CDATA[地區：屯門 街道名稱：青山公路-大欖段南行 行車方向：屯門 鄰近位置：青欖路
+]]></description>
+    <styleUrl>#style10</styleUrl>
+    <Point>
+      <coordinates>114.011398,22.366203,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門 (編號096)</name>
+    <description><![CDATA[地區：屯門 街道名稱：青山公路-大欖段南行 行車方向：荃灣 鄰近位置：青欖路
+]]></description>
+    <styleUrl>#style93</styleUrl>
+    <Point>
+      <coordinates>114.009644,22.366373,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門 (編號097)</name>
+    <description><![CDATA[
+地區：屯門 街道名稱：龍富路 行車方向：踏石角 鄰近位置：屯門高爾夫球場
+]]></description>
+    <styleUrl>#style68</styleUrl>
+    <Point>
+      <coordinates>113.961868,22.382961,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-屯門 (編號098)</name>
+    <description><![CDATA[
+地區：新界 街道名稱：龍富路 行車方向：踏石角 鄰近位置：屯門公眾騎術學校
+]]></description>
+    <styleUrl>#style94</styleUrl>
+    <Point>
+      <coordinates>113.955826,22.374842,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-荃灣 (編號099)</name>
+    <description><![CDATA[地區：新界 街道名稱：海安路 行車方向：屯門 鄰近位置：荃灣麗城花園三期
+]]></description>
+    <styleUrl>#style102</styleUrl>
+    <Point>
+      <coordinates>114.102943,22.371780,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-荃灣 (編號100)</name>
+    <description><![CDATA[地區：荃灣 街道名稱：海安路 行車方向：荃灣 鄰近位置：荃灣麗城花園三期
+]]></description>
+    <styleUrl>#style28</styleUrl>
+    <Point>
+      <coordinates>114.101860,22.370956,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-葵涌 (編號101)</name>
+    <description><![CDATA[
+地區：葵涌 街道名稱：青山公路 行車方向：葵涌 鄰近位置：中葵涌公園
+]]></description>
+    <styleUrl>#style25</styleUrl>
+    <Point>
+      <coordinates>114.133011,22.353464,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-葵涌 (編號102)</name>
+    <description><![CDATA[
+地區：新界 街道名稱：葵涌道 行車方向：九龍 鄰近位置：豪華工業大廈
+]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>114.132942,22.365211,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔 (編號103)</name>
+    <description><![CDATA[
+地區：大埔 街道名稱：汀角路 行車方向：大埔 鄰近位置：蘆慈田村
+]]></description>
+    <styleUrl>#style56</styleUrl>
+    <Point>
+      <coordinates>114.229233,22.471954,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔 (編號104)</name>
+    <description><![CDATA[地區：大埔 街道名稱：汀角路 行車方向：大埔 鄰近位置：下坑政府職員宿舍
+]]></description>
+    <styleUrl>#style106</styleUrl>
+    <Point>
+      <coordinates>114.184464,22.461164,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔 (編號105)</name>
+    <description><![CDATA[地區：大埔 街道名稱：汀角路 行車方向：大尾篤 鄰近位置：下坑政府職員宿舍
+]]></description>
+    <styleUrl>#style113</styleUrl>
+    <Point>
+      <coordinates>114.183609,22.460320,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔 (編號106)</name>
+    <description><![CDATA[<div>
+地區：大埔 街道名稱：露輝路 行車方向：汀角路 鄰近位置：淺月灣
+ ]]></description>
+    <styleUrl>#style33</styleUrl>
+    <Point>
+      <coordinates>114.193115,22.465038,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔 (編號107)</name>
+    <description><![CDATA[
+地區：大埔 街道名稱：完善路 行車方向：吐露港公路 鄰近位置：基正小學
+]]></description>
+    <styleUrl>#style105</styleUrl>
+    <Point>
+      <coordinates>114.177773,22.455933,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-西貢 (編號108)</name>
+    <description><![CDATA[
+地區：西貢 街道名稱：西貢公路 行車方向：西貢市中心 鄰近位置：南圍
+]]></description>
+    <styleUrl>#style54</styleUrl>
+    <Point>
+      <coordinates>114.254379,22.348606,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-西貢 (編號109)</name>
+    <description><![CDATA[
+地區：西貢 街道名稱：清水灣道 行車方向：清水灣 鄰近位置：銀線灣回旋處/阿公灣路
+]]></description>
+    <styleUrl>#style39</styleUrl>
+    <Point>
+      <coordinates>114.268242,22.324512,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-將軍澳 (編號110)</name>
+    <description><![CDATA[
+地區：將軍澳街道名稱：坑口道 行車方向：將軍澳市中心 近位置：坑口鄉事委員會
+]]></description>
+    <styleUrl>#style119</styleUrl>
+    <Point>
+      <coordinates>114.270378,22.319431,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-將軍澳 (編號111)</name>
+    <description><![CDATA[地區：將軍澳 街道名稱：環保大道 行車方向：將軍澳工業村 近位置：日出康城-首都]]></description>
+    <styleUrl>#style36</styleUrl>
+    <Point>
+      <coordinates>114.272293,22.297823,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-將軍澳 (編號112)</name>
+    <description><![CDATA[地區：將軍澳 街道名稱：環保大道
+鄰行車方向：將軍澳市中心 近位置：未到清水灣半島
+]]></description>
+    <styleUrl>#style53</styleUrl>
+    <Point>
+      <coordinates>114.270744,22.304165,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-荔景 (編號113)</name>
+    <description><![CDATA[地區：荔景 街道名稱：華景山路 行車方向：荔景 鄰近位置：華員徑
+]]></description>
+    <styleUrl>#style103</styleUrl>
+    <Point>
+      <coordinates>114.137604,22.349045,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-元朗 (編號116)</name>
+    <description><![CDATA[地區：元朗 街道名稱：青山公路 行車方向：屯門 鄰近位置：灰沙圍
+]]></description>
+    <styleUrl>#style90</styleUrl>
+    <Point>
+      <coordinates>114.006180,22.439234,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔 (編號114)</name>
+    <description><![CDATA[<div style="font-size:10pt">
+地區：大埔 街道名稱：林錦公路 行車方向：大埔 鄰近位置：嘉道理農場
+]]></description>
+    <styleUrl>#style12</styleUrl>
+    <Point>
+      <coordinates>114.118217,22.434370,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-大埔 (編號115)</name>
+    <description><![CDATA[地區：大埔 街道名稱：林錦公路 行車方向：錦田 鄰近位置：直升機公司
+]]></description>
+    <styleUrl>#style21</styleUrl>
+    <Point>
+      <coordinates>114.110825,22.432253,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-彩雲 (編號117)</name>
+    <description><![CDATA[地區：彩雲 街道名稱：清水灣道 行車方向：彩虹 鄰近位置：德望學校
+]]></description>
+    <styleUrl>#style96</styleUrl>
+    <Point>
+      <coordinates>114.223427,22.334381,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-藍田 (編號118)</name>
+    <description><![CDATA[地區：藍田 快速公路：將軍澳道 行車方向：觀塘 鄰近位置：藍田啟田道
+]]></description>
+    <styleUrl>#style109</styleUrl>
+    <Point>
+      <coordinates>114.235764,22.312433,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-黃大仙 (編號119)</name>
+    <description><![CDATA[地區：黃大仙 街道名稱：沙田坳道 行車方向：黃大仙 鄰近位置：中電站
+]]></description>
+    <styleUrl>#style84</styleUrl>
+    <Point>
+      <coordinates>114.194992,22.348434,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-慈雲山 (編號120)</name>
+    <description><![CDATA[地區：慈雲山 街道名稱：慈雲山 行車方向：鑽石山 近位置：惠華街
+]]></description>
+    <styleUrl>#style27</styleUrl>
+    <Point>
+      <coordinates>114.200020,22.349928,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-何文田 (編號121)</name>
+    <description><![CDATA[地區：何文田 街道名稱：公主道 行車方向：海底隧道 鄰近位置：何文田愛民村
+]]></description>
+    <styleUrl>#style65</styleUrl>
+    <Point>
+      <coordinates>114.177155,22.314220,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-何文田 (編號122)</name>
+    <description><![CDATA[地區：何文田 街道名稱：公主道 行車方向：沙田 鄰近位置：何文田衛理道
+]]></description>
+    <styleUrl>#style48</styleUrl>
+    <Point>
+      <coordinates>114.176712,22.312696,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-石硤尾 (編號123)</name>
+    <description><![CDATA[地區：石硤尾 街道名稱：龍翔道 行車方向：觀塘 鄰近位置：石硤尾龍坪道匯合處
+]]></description>
+    <styleUrl>#style64</styleUrl>
+    <Point>
+      <coordinates>114.170097,22.342405,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-黃大仙 (編號124)</name>
+    <description><![CDATA[地區：黃大仙 街道名稱：龍翔道 行車方向：觀塘 鄰近位置：黃大仙天馬苑對開
+]]></description>
+    <styleUrl>#style50</styleUrl>
+    <Point>
+      <coordinates>114.183792,22.343502,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-石硤尾 (編號125)</name>
+    <description><![CDATA[地區：石硤尾 街道名稱：龍翔道 行車方向：葵涌 鄰近位置：九龍塘畢架山花園
+]]></description>
+    <styleUrl>#style88</styleUrl>
+    <Point>
+      <coordinates>114.167114,22.341383,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-荔枝角 (編號126)</name>
+    <description><![CDATA[地區：荔枝角 街道名稱：呈祥道 行車方向：葵涌 鄰近位置：荔枝角明愛醫院
+]]></description>
+    <styleUrl>#style114</styleUrl>
+    <Point>
+      <coordinates>114.150414,22.340956,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-荔枝角 (編號127)</name>
+    <description><![CDATA[地區：荔枝角 街道名稱：呈祥道 行車方向：觀塘 鄰近位置：荔枝角明愛醫院
+]]></description>
+    <styleUrl>#style23</styleUrl>
+    <Point>
+      <coordinates>114.146751,22.340153,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-九龍塘 (編號128)</name>
+    <description><![CDATA[地區：九龍 街道名稱：義德道 行車方向：歌和老街 鄰近位置：愚園對開
+]]></description>
+    <styleUrl>#style117</styleUrl>
+    <Point>
+      <coordinates>114.176544,22.342916,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>離島-北大嶼山公路 (編號129)</name>
+    <description><![CDATA[
+地區：離島 快速公路：北大嶼山公路 行車方向：青衣 鄰近位置：映灣園
+]]></description>
+    <styleUrl>#style85</styleUrl>
+    <Point>
+      <coordinates>113.969246,22.299156,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-新娘潭 (編號130)</name>
+    <description><![CDATA[地區：新界 街道名稱：新娘潭道 行車方向：鹿頸 鄰近位置：鹿頸
+]]></description>
+    <styleUrl>#style19</styleUrl>
+    <Point>
+      <coordinates>114.220940,22.522825,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>新界-新娘潭 (編號131)</name>
+    <description><![CDATA[地區：新界 街道名稱：新娘潭道 行車方向：大埔 鄰近位置：新娘潭
+]]></description>
+    <styleUrl>#style95</styleUrl>
+    <Point>
+      <coordinates>114.238037,22.502298,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-鯉魚門道 (編號132)</name>
+    <description><![CDATA[地區：港島 快速公路：東區走廊 行車方向：九龍鄰近位置：東區走廊東隧入口
+]]></description>
+    <styleUrl>#style13</styleUrl>
+    <Point>
+      <coordinates>114.234818,22.301702,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-葵涌 (編號 133)</name>
+    <description><![CDATA[地區：新界 街道名稱：青山公路-葵涌段 行車方向：葵涌 鄰近位置：石排街
+]]></description>
+    <styleUrl>#style120</styleUrl>
+    <Point>
+      <coordinates>114.135994,22.362518,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>九龍-大埔道 (編號 134)</name>
+    <description><![CDATA[地區：九龍 街道名稱：大埔道 行車方向：深水步 鄰近位置：路德會教主堂
+]]></description>
+    <styleUrl>#style76</styleUrl>
+    <Point>
+      <coordinates>114.162743,22.335068,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

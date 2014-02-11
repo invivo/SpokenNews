@@ -1,0 +1,18 @@
+//
+// Prefix header for all source files of the 'SpokenNews' target in the 'SpokenNews' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import "GlobalHeader.h"
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "InvivoDeviceUtility.h"
+    #import "PrefStore.h"
+    #import "SpeakManager.h"
+#endif
