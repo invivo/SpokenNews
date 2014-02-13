@@ -1,0 +1,6 @@
+1. 自動 detect 位置 show 快拍 
+2. 快拍要定時更新
+3. 快相雷達 detector
+4. 自動 search 就近油站
+5. 自動 search 就近停車場
+6. 顯示新聞
