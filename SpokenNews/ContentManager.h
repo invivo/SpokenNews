@@ -26,7 +26,7 @@
     
     PrefStore *prefStore;
 }
-
+@property (nonatomic, copy) NSString *lastNewsString;
 +(ContentManager*)sharedInstance;
 
 -(void)updateGPSType;

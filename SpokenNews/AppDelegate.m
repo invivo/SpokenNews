@@ -23,8 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    isDebug = NO;
+    isDebug = YES;
     isTerminated = NO;
+    
+    [self doInitDB];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -35,23 +37,23 @@
     }
     else {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        self.window.rootViewController = [sb instantiateInitialViewController];        
+        self.window.rootViewController = [sb instantiateInitialViewController];
     }
-        
+    
     prefStore = [PrefStore sharedInstance];
     contentManager = [ContentManager sharedInstance];
-    [contentManager startFeedingContent];
+    //    [contentManager startFeedingContent];
     
     //disable idle timer
     [[UIApplication sharedApplication]setIdleTimerDisabled:YES];
-
+    
     if([launchOptions objectForKey:UIApplicationLaunchOptionsLocationKey])
     {
         isBackground = YES;
     } else {
         isBackground = NO;
     }
-        
+    
     [self.window makeKeyAndVisible];
     
     NSLog(@"did finish launch");
@@ -97,6 +99,8 @@
             backgroundTask = UIBackgroundTaskInvalid;
         }
     }];
+    
+    [[MPMusicPlayerController iPodMusicPlayer] endGeneratingPlaybackNotifications];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -113,6 +117,7 @@
     {
         [viewController reloadData];
     }
+    [[MPMusicPlayerController iPodMusicPlayer] beginGeneratingPlaybackNotifications];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

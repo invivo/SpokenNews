@@ -44,7 +44,7 @@ static SpeakManager* manager;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(itemDidFinishPlaying) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
         //register some notification for handling ipod music player playback
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangePlayerState:) name:MPMusicPlayerControllerPlaybackStateDidChangeNotification object:nil];
-        [musicPlayer beginGeneratingPlaybackNotifications];
+        //[musicPlayer beginGeneratingPlaybackNotifications];
         
         //init the speak engine
         mNativeEngine = [[NativeTTS alloc]init];

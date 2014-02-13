@@ -106,12 +106,15 @@ static ContentManager *manager;
                 
                 [speakManager speak:[speakQueue objectAtIndex:0]];
                 
+                self.lastNewsString = [speakQueue objectAtIndex:0];
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"NewsUpdate" object:self.lastNewsString userInfo:nil];
+                
                 
                 NewsData *obj = [NSEntityDescription insertNewObjectForEntityForName:@"NewsData" inManagedObjectContext:[coreDataHelper managedObjectContext]];
                 [obj setContent:[speakQueue objectAtIndex:0]];
                 [obj setTimestamp:[NSDate date]];
                 [obj setSpoken:[NSNumber numberWithBool:NO]];
-                //NSLog(@"Data Set added");
+                
                 
                 if([speakQueue count] > 1)
                     [speakQueue removeObjectAtIndex:0];

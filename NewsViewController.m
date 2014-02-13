@@ -90,8 +90,8 @@
     {
         NSLog(@"do init works");
         isFirstLaunch = YES;
-        [(AppDelegate*)[[UIApplication sharedApplication]delegate]doInitDB];
-        [(AppDelegate*)[[UIApplication sharedApplication]delegate]doInitWork];
+        //[(AppDelegate*)[[UIApplication sharedApplication]delegate]doInitDB];
+        //[(AppDelegate*)[[UIApplication sharedApplication]delegate]doInitWork];
         
         NSError *error = nil;
         if (![[self fetchedResultsController] performFetch:&error]) {
