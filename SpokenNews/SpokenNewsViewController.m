@@ -7,6 +7,8 @@
 //
 
 #import "SpokenNewsViewController.h"
+#import "SNSpeedCamViewController.h"
+#import "SNSearchViewController.h"
 
 @interface SpokenNewsViewController ()
 
@@ -27,6 +29,8 @@
 {
     [super viewDidLoad];
     
+    spokenNewsVC = self;
+    
     bubbleImg = [UIImage imageNamed:@"news_bubble_ui"];
     scretchedBubbleImage = [bubbleImg resizableImageWithCapInsets:UIEdgeInsetsMake(30, 0, 31, 0)];
     
@@ -44,6 +48,32 @@
     [self applyMotionEffect:theScorllView];
     [self applyMotionEffect:controlUI];
     [self applyMotionEffect:camLocLabel];
+    
+    
+    
+    UIInterpolatingMotionEffect *xAxis = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    xAxis.minimumRelativeValue = [NSNumber numberWithFloat:5.0];
+    xAxis.maximumRelativeValue = [NSNumber numberWithFloat:-5.0];
+    
+    
+    UIInterpolatingMotionEffect *yAxis = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    yAxis.minimumRelativeValue = [NSNumber numberWithFloat:-5.0];
+    yAxis.maximumRelativeValue = [NSNumber numberWithFloat:5.0];
+    
+    UIMotionEffectGroup *group = [[UIMotionEffectGroup alloc] init];
+    group.motionEffects = @[yAxis,xAxis];
+    
+    [bgCamView addMotionEffect:group];
+    bgCamView.transform = CGAffineTransformMakeScale(1.02, 1.02);
+    
+  
+}
+
+
+
+-(void)setTrafficCamLoc:(NSString*)location withTime:(NSString*)time{
+    [trafficCamLocLabel setText:location];
+    [trafficCamTimeLabel setText:time];
 }
 
 
@@ -68,6 +98,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - button click
 - (IBAction)driveBtnClicked:(id)sender{
     if(isDriving){
@@ -80,6 +112,33 @@
         [contentManager startFeedingContent];
     }
     isDriving = !isDriving;
+}
+
+UIImage *blurImg;
+- (IBAction)speedCamBtnClicked:(id)sender{
+    UIImage *img = [self screenshot];
+    CIImage *originalImage = [CIImage imageWithCGImage:img.CGImage];
+    CIFilter *f = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [f setValue:originalImage forKey:kCIInputImageKey];
+    [f setValue:[NSNumber numberWithFloat:5] forKey:@"inputRadius"];
+    CIImage *outputImage = f.outputImage;
+    blurImg = [UIImage imageWithCGImage:[_ciContext createCGImage:outputImage fromRect:outputImage.extent]];
+    
+    [self performSegueWithIdentifier:@"speedCamSegue" sender:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier]isEqualToString:@"speedCamSegue"])
+    {
+        SNSpeedCamViewController* vc = (SNSpeedCamViewController*)[segue destinationViewController];
+        [vc setBlurImg:blurImg];
+    } else if([[segue identifier]isEqualToString:@"showGasSegue"]){
+       SNSearchViewController* vc = (SNSearchViewController*)[segue destinationViewController];
+        [vc setSearchType:1];
+    } else if([[segue identifier]isEqualToString:@"showParkingSegue"]){
+       SNSearchViewController* vc = (SNSearchViewController*)[segue destinationViewController];
+        [vc setSearchType:0];
+    }
 }
 
 #pragma mark - bubble resize
@@ -202,7 +261,7 @@ NSTimer *timer;
 }
 
 - (UIImage *) screenshot {
-    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 1); //[UIScreen mainScreen].scale);
     
     [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:NO];
     
@@ -236,6 +295,7 @@ NSTimer *timer;
     
     [view addMotionEffect:group];
 }
+
 
 /*
 #pragma mark - Navigation

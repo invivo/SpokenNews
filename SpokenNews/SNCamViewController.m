@@ -7,6 +7,9 @@
 //
 
 #import "SNCamViewController.h"
+#import "PSIDataStore.h"
+#import "CamMapItem.h"
+#import "GlobalHeader.h"
 
 @interface SNCamViewController ()
 
@@ -51,6 +54,76 @@
     CIImage *outputImage = originalImage; //f.outputImage;
     [camBlurTopView setImage:
      [UIImage imageWithCGImage:[_ciContext createCGImage:outputImage fromRect:outputImage.extent]]];
+
+        
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(receivedLocationUpdateNotification:) name:@"LocationUpdate" object:nil];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(receivedLocationUpdateNotification:) name:@"LocationUpdate" object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"LocationUpdate" object:nil];
+}
+
+-(void)receivedLocationUpdateNotification:(NSNotification*)notification{
+    //NSLog(@"%@", notification);
+    [UIView animateWithDuration:0.2f animations:^(void){
+        updateNotice.alpha = 1.0f;
+    } completion:^(BOOL finished){
+        CLLocation *loc = [notification object];
+        CamMapItem *nearestCam = [[PSIDataStore sharedInstance]getNearestTrafficCam:loc];
+        NSString *addr = [nearestCam webAddress];
+        __block ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:addr]];
+        [request setCompletionBlock:^(void){
+            NSData *imgData = [request responseData];
+            UIImage *img = [UIImage imageWithData:imgData];
+            CIImage *originalImage = [CIImage imageWithCGImage:img.CGImage];
+            
+            originalImage = [originalImage imageByCroppingToRect:CGRectMake(0, img.size.height-10, img.size.width, 10)];
+            
+            [camView setImage:img];
+            CIImage *outputImage = originalImage; //f.outputImage;
+            [camBlurTopView setImage:
+             [UIImage imageWithCGImage:[_ciContext createCGImage:outputImage fromRect:outputImage.extent]]];
+            
+            if(spokenNewsVC!=nil)
+            {
+                NSLocale *hkLocale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh-Hant-HK"];
+                NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+                [formatter setDateFormat:@"hh:mmaaa"];
+                NSLog(@"%@", [formatter stringFromDate:[NSDate date]]);
+                
+                [spokenNewsVC setTrafficCamLoc:[nearestCam title]
+                                      withTime:[[formatter stringFromDate:[NSDate date]]uppercaseString]];
+                
+                [self hideDefaultBG];
+                
+                [UIView animateWithDuration:0.2f animations:^(void){
+                    updateNotice.alpha = 0.0f;
+                }];
+            }
+            
+            request = nil;
+        }];
+        [request setFailedBlock:^(void){
+            request = nil;
+            [UIView animateWithDuration:0.2f animations:^(void){
+                updateNotice.alpha = 0.0f;
+            }];
+        }];
+        [request startAsynchronous];
+    }];
+}
+
+-(void)showDefaultBG{
+    [UIView animateWithDuration:0.5f animations:^(void){
+        [defaultBG setAlpha:1.0f];
+    }];
+}
+-(void)hideDefaultBG{
+    [UIView animateWithDuration:0.5f animations:^(void){
+        [defaultBG setAlpha:0.0f];
+    }];
 }
 
 - (void)didReceiveMemoryWarning

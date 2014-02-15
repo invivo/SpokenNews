@@ -76,6 +76,46 @@ static SpeakManager* manager;
     }
 }
 
+-(void)forceSpeak:(id)obj{
+    MPMusicPlaybackState state = musicPlayer.playbackState;
+    if(isDebug)
+    {
+        NSLog(@"pause before speak and cache %ld", (long)state);
+        NSLog(@"playing: %d, paused: %d interruped: %d", MPMusicPlaybackStatePlaying, MPMusicPlaybackStatePaused, MPMusicPlaybackStateInterrupted);
+    }
+    if(musicPlayer.playbackState == MPMusicPlaybackStatePlaying)
+    {
+        if(isDebug)
+            NSLog(@"pause and speak");
+        [musicPlayer pause];
+        isMusicPausedBySelf = YES;
+        //speak route to callback;
+
+    } else if(musicPlayer.playbackState == MPMusicPlaybackStateInterrupted)
+    {
+        if(![mNativeEngine isPlaying])
+        {
+            //[engine speakAndCache:checkstr((NSString*)obj)];
+            //[mNativeEngine speak:checkstr((NSString*)obj)];
+        }
+        isMusicPausedBySelf = YES;
+    }
+    else if(musicPlayer.playbackState == MPMusicPlaybackStateStopped || musicPlayer.playbackState == MPMusicPlaybackStatePaused)
+    {
+        if(isDebug)
+            NSLog(@"speak directly: %@", obj);
+        isMusicPausedBySelf = NO;
+        
+        if(![mNativeEngine isPlaying]){
+            //[engine speakAndCache:checkstr((NSString*)obj)];
+            //[mNativeEngine speak:checkstr((NSString*)obj)];
+        }
+    }
+    //self.nextSentenceToSpeak = (NSString*)obj;
+    [mNativeEngine stop];
+    [mNativeEngine speak:checkstr((NSString*)obj)];
+}
+
 -(void)speak:(id)obj{
     MPMusicPlaybackState state = musicPlayer.playbackState;
     if(isDebug)

@@ -25,11 +25,17 @@
     CLLocationCoordinate2D lastestCamCoord;
     
     PrefStore *prefStore;
+    
+    BOOL isGenerateNotification;
 }
 @property (nonatomic, copy) NSString *lastNewsString;
+@property (nonatomic, copy) CLLocation* lastLocation;
 +(ContentManager*)sharedInstance;
 
 -(void)updateGPSType;
+
+-(void)beginGenerateNotification;
+-(void)endGenerateNotification;
 
 -(void)startFeedingContent;
 -(void)stopFeedingContent;

@@ -14,7 +14,7 @@
 #import "NewsViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 //#import "KMLParser.h"
-
+#import "PSIDataStore.h"
 
 
 @implementation AppDelegate
@@ -26,6 +26,7 @@
     isDebug = YES;
     isTerminated = NO;
     
+    [PSIDataStore sharedInstance];
     [self doInitDB];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -55,6 +56,7 @@
     }
     
     [self.window makeKeyAndVisible];
+    
     
     NSLog(@"did finish launch");
     
@@ -101,6 +103,7 @@
     }];
     
     [[MPMusicPlayerController iPodMusicPlayer] endGeneratingPlaybackNotifications];
+    [[ContentManager sharedInstance]endGenerateNotification];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -118,6 +121,7 @@
         [viewController reloadData];
     }
     [[MPMusicPlayerController iPodMusicPlayer] beginGeneratingPlaybackNotifications];
+    [[ContentManager sharedInstance]beginGenerateNotification];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

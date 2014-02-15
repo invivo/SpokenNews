@@ -30,6 +30,12 @@ static ContentManager *manager;
         prefStore = [PrefStore sharedInstance];
         manager = [[CLLocationManager alloc]init];
         
+        //load xml
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"StationarySpeedRadar" ofType:@"kml"];
+        NSURL *url = [NSURL fileURLWithPath:path];
+        kmlParser = [[KMLParser alloc] initWithURL:url];
+        [kmlParser parseKML];
+        
         //[NSThread detachNewThreadSelector:@selector(testThread1) toTarget:self withObject:nil];
         //[NSThread detachNewThreadSelector:@selector(testThread2) toTarget:self withObject:nil];
     }
@@ -287,6 +293,7 @@ static ContentManager *manager;
         if(isDebug)
             NSLog(@" the degress is = %f",fmod(degrees, 360));
     }
+
 }
 
 #pragma mark - location manager delegate
@@ -296,6 +303,13 @@ static ContentManager *manager;
     [self handleContentThread];
     [self handleSpeakThread];
     [self findNearSpeedCam:[locations lastObject]];
+    
+    self.lastLocation = [locations lastObject];
+    if(isGenerateNotification)
+    {
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"LocationUpdate"
+                                                           object:self.lastLocation];
+    }
 }
 
 #pragma mark - schedule local notification
@@ -365,4 +379,12 @@ static ContentManager *manager;
         }
     }
 }
+
+-(void)beginGenerateNotification{
+    isGenerateNotification = YES;
+}
+-(void)endGenerateNotification {
+    isGenerateNotification = NO;
+}
+
 @end

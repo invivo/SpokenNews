@@ -8,12 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreImage/CoreImage.h>
+#import "ASIHTTPRequest.h"
+
 @interface SNCamViewController : UIViewController
 {
     IBOutlet UIImageView *camView;
     IBOutlet UIImageView *camBlurTopView;
     
+    IBOutlet UIImageView *defaultBG;
+ 
+    IBOutlet UIView *updateNotice;
     CIContext *_ciContext;
     EAGLContext *_eaglContext;
 }
+-(void)showDefaultBG;
+-(void)hideDefaultBG;
+
 @end

@@ -38,7 +38,13 @@
 
 -(void)stop{
     if([_synth isSpeaking])
-        [_synth stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+    {
+        NSLog(@"force stop speaking");
+        if(![_synth stopSpeakingAtBoundary:AVSpeechBoundaryImmediate])
+        {
+            [_synth stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+        }
+    }
 }
 
 -(void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance

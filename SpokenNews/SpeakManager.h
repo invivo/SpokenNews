@@ -34,6 +34,7 @@
 //instance method
 -(id)init;
 -(void)speak:(id)obj;
+-(void)forceSpeak:(id)obj;
 //static method
 +(SpeakManager*)sharedInstance;
 

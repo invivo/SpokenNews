@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreImage/CoreImage.h>
 #import "ContentManager.h"
+#import "GlobalHeader.h"
+
 @interface SpokenNewsViewController : UIViewController
 {
     IBOutlet UIView *newsView;
@@ -24,6 +26,10 @@
     IBOutlet UIView *controlUI;
     IBOutlet UIView *camLocLabel;
     IBOutlet UIView *theScorllView;
+    IBOutlet UIView *bgCamView;
+    
+    IBOutlet UILabel *trafficCamTimeLabel;
+    IBOutlet UILabel *trafficCamLocLabel;
     
     CIContext *_ciContext;
     EAGLContext *_eaglContext;
@@ -37,4 +43,5 @@
     IBOutlet UIButton* driveBtn;
     BOOL isDriving;
 }
+-(void)setTrafficCamLoc:(NSString*)location withTime:(NSString*)time;
 @end

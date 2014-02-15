@@ -11,11 +11,14 @@
 #import "KMLParser.h"
 #import "NewsViewController.h"
 #import "NativeTTS.h"
+#import "SpokenNewsViewController.h"
 
 #ifndef SpokenNews_GlobalHeader_h
 #define SpokenNews_GlobalHeader_h
 
 BOOL isDebug;
+
+SpokenNewsViewController *spokenNewsVC;
 
 NewsViewController *viewController;
 KMLParser *kmlParser;
