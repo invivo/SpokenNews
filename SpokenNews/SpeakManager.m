@@ -70,7 +70,7 @@ static SpeakManager* manager;
 -(void)enableDriving:(BOOL)_isDriving{
     if(_isDriving)
     {
-        [self speak:@"開始駕駛，我將會為你提供新聞及交通資訊"];
+        [self speak:@"開始駕駛，我會為你提供最新嘅交通資訊"];
     } else {
         //do nothing now sin
     }

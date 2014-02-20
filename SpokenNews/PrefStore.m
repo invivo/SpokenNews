@@ -33,8 +33,26 @@ static PrefStore *prefStore;
         } else {
             _gpsType = kCLLocationAccuracyBest;
         }
+        
+        if([[NSUserDefaults standardUserDefaults]objectForKey:@"isFirstLaunch"])
+        {
+            _isFirstLaunch = [[[NSUserDefaults standardUserDefaults]objectForKey:@"isFirstLaunch"]boolValue];
+        } else {
+            _isFirstLaunch = YES;
+        }
     }
     return self;
+}
+
+//-(BOOL)isFirstLaunch{
+//    return _isFirstLaunch;
+//}
+
+-(void)setIsFirstLaunch:(BOOL)isFirstLaunch{
+    _isFirstLaunch = isFirstLaunch;
+    [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithBool:isFirstLaunch] forKey:@"isFirstLaunch"];
+    
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 +(PrefStore*)sharedInstance{

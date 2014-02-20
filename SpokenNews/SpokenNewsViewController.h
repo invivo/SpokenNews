@@ -10,8 +10,9 @@
 #import <CoreImage/CoreImage.h>
 #import "ContentManager.h"
 #import "GlobalHeader.h"
+#import "SNNewsListController.h"
 
-@interface SpokenNewsViewController : UIViewController
+@interface SpokenNewsViewController : UIViewController<UIAlertViewDelegate>
 {
     IBOutlet UIView *newsView;
     IBOutlet UIView *audioControl;
@@ -30,6 +31,9 @@
     
     IBOutlet UILabel *trafficCamTimeLabel;
     IBOutlet UILabel *trafficCamLocLabel;
+    IBOutlet UIView *trafficCamPosView;
+    
+    IBOutlet UIScrollView *newsScrollView;
     
     CIContext *_ciContext;
     EAGLContext *_eaglContext;
@@ -42,6 +46,13 @@
     
     IBOutlet UIButton* driveBtn;
     BOOL isDriving;
+    
+    SNNewsListController *newsListController;
 }
+@property (nonatomic, strong) CIContext *ciContext;
+-(void)startFeedingNews;
+-(void)stopFeedingNews;
+-(void)limitScrollViewContentSize;
+-(void)releaseScrollViewContentSizeWithAnimation:(BOOL)isAnimated;
 -(void)setTrafficCamLoc:(NSString*)location withTime:(NSString*)time;
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
-@interface SNAudioViewController : UIViewController
+@interface SNAudioViewController : UIViewController < MPMediaPickerControllerDelegate>
 {
     IBOutlet UILabel *trackLabel;
     IBOutlet UIButton *playbackBtn;

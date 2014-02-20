@@ -11,14 +11,12 @@
 #import "ContentManager.h"
 #import "PSIDataStore.h"
 
-@interface SNSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
+@interface SNSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, MKMapViewDelegate>
 {
     IBOutlet  MKMapView *myMapView;
     NSArray *searchResultArr;
     
-    
     IBOutlet UITableView *_tableView;
-    
     IBOutlet UILabel *searchTypeLabel;
 }
 -(void)setSearchType:(int)type;

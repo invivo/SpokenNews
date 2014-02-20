@@ -20,6 +20,10 @@
     IBOutlet UIView *updateNotice;
     CIContext *_ciContext;
     EAGLContext *_eaglContext;
+    
+    NSOperationQueue *queue;
+    
+    NSString *lastCamSerial;
 }
 -(void)showDefaultBG;
 -(void)hideDefaultBG;

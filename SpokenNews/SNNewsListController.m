@@ -130,6 +130,10 @@ BOOL isFirstLaunch;
     {
         NSLog(@"try insert row");
         [self.newsTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationBottom];
+        
+        if(spokenNewsVC != nil)
+            [spokenNewsVC releaseScrollViewContentSizeWithAnimation:YES];
+        
     } else if(type == NSFetchedResultsChangeDelete)
     {
         [self.newsTableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]  withRowAnimation:UITableViewRowAnimationBottom];

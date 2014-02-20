@@ -30,6 +30,7 @@
 }
 @property (nonatomic, copy) NSString *lastNewsString;
 @property (nonatomic, copy) CLLocation* lastLocation;
+@property (assign) double heading;
 +(ContentManager*)sharedInstance;
 
 -(void)updateGPSType;

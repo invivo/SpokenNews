@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PrefStore : NSObject
+@property (nonatomic) BOOL isFirstLaunch;
 @property (assign) BOOL isDriving;
 @property (assign) BOOL isUpdateNews;
 @property (assign) double gpsType;

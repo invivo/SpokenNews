@@ -69,6 +69,14 @@
         [[MPMusicPlayerController iPodMusicPlayer]play];
     } else if([[MPMusicPlayerController iPodMusicPlayer]playbackState] == MPMusicPlaybackStatePlaying){
         [[MPMusicPlayerController iPodMusicPlayer]pause];
+    } else {
+        MPMediaPickerController *mediaPicker = [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeAny];
+        
+        mediaPicker.delegate = self;
+        mediaPicker.allowsPickingMultipleItems = YES;
+        mediaPicker.prompt = @"選擇你要播放的歌曲";
+        mediaPicker.showsCloudItems = NO;
+        [self presentViewController:mediaPicker animated:YES completion:nil];
     }
 }
 
@@ -99,6 +107,22 @@
     } else {
         [playbackBtn setImage:[UIImage imageNamed:@"audio_btn_play"] forState:UIControlStateNormal];
     }
+}
+
+#pragma mark - music media picker delegate
+- (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
+{
+    if (mediaItemCollection) {
+        
+        [[MPMusicPlayerController iPodMusicPlayer] setQueueWithItemCollection: mediaItemCollection];
+        [[MPMusicPlayerController iPodMusicPlayer] play];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

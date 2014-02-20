@@ -38,6 +38,7 @@ static ContentManager *manager;
         
         //[NSThread detachNewThreadSelector:@selector(testThread1) toTarget:self withObject:nil];
         //[NSThread detachNewThreadSelector:@selector(testThread2) toTarget:self withObject:nil];
+        self.heading = -2036;
     }
     return self;
 }
@@ -56,24 +57,58 @@ static ContentManager *manager;
 }
 
 -(void)startFeedingContent{
+    
     isDebug = YES;
     if(isDebug)
         NSLog(@"startFeedingContent");
     
-    
+    isTerminated = NO;
     manager.delegate = self;
-	manager.desiredAccuracy = prefStore.gpsType;
+    manager.desiredAccuracy = prefStore.gpsType;
     [manager startUpdatingLocation];
+    [manager startUpdatingHeading];
     
     [speakManager enableDriving:YES];
     
-
+    
     [self handleContentThread];
     [self handleSpeakThread];
 }
 
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    if(status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusNotDetermined ||
+       status == kCLAuthorizationStatusRestricted)
+    {
+        if(spokenNewsVC!=nil)
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"尚未啟動定位功能"
+                                                               message:@"如要啟動自動更新功能，請將 設定 > 穩私 > 定位服務 > 定位服務 及 Spoken News 旁的開關設定為「開」。"
+                                                              delegate:nil
+                                                     cancelButtonTitle:@"明白"
+                                                     otherButtonTitles: nil];
+            [alertView show];
+            [spokenNewsVC stopFeedingNews];
+        }
+    } else {
+        if(isDebug)
+        {
+            NSLog(@"Authorized");
+        }
+    }
+}
+
 -(void)stopFeedingContent{
     [manager stopUpdatingLocation];
+    [manager stopUpdatingHeading];
+    isTerminated = YES;
+    if([contentThread isExecuting])
+    {
+        [contentThread cancel];
+    }
+    if([speakThread isExecuting])
+    {
+        [speakThread cancel];
+    }
 }
 
 -(void)updateGPSType{
@@ -87,7 +122,8 @@ static ContentManager *manager;
         while(!isTerminated)
         {
             [NSThread sleepForTimeInterval:15];
-            [self performSelectorOnMainThread:@selector(speakOnMainThread) withObject:nil waitUntilDone:YES];
+            if(!isTerminated)
+                [self performSelectorOnMainThread:@selector(speakOnMainThread) withObject:nil waitUntilDone:YES];
         }
     }
 }
@@ -110,7 +146,9 @@ static ContentManager *manager;
                     }
                 }
                 
-                [speakManager speak:[speakQueue objectAtIndex:0]];
+                BOOL isDemo = NO;
+                if(!isDemo)
+                    [speakManager speak:[speakQueue objectAtIndex:0]];
                 
                 self.lastNewsString = [speakQueue objectAtIndex:0];
                 [[NSNotificationCenter defaultCenter]postNotificationName:@"NewsUpdate" object:self.lastNewsString userInfo:nil];
@@ -258,9 +296,12 @@ static ContentManager *manager;
                     {
                         NSArray* subcomponents = [component componentsSeparatedByString:@"："];
                         //                    NSLog(@"%@", [subcomponents objectAtIndex:1]);
-                        [camArray addObject:
-                         [[subcomponents objectAtIndex:1]stringByReplacingOccurrencesOfString:@"\n" withString:@""]
-                         ];
+                        if(subcomponents.count > 1)
+                        {
+                            [camArray addObject:
+                             [[subcomponents objectAtIndex:1]stringByReplacingOccurrencesOfString:@"\n" withString:@""]
+                             ];
+                        }
                     }
                     
                     NSString *finalString = [NSString stringWithFormat:@"你的五百米範圍內於%@往%@方向近%@有快相機。", [camArray objectAtIndex:1], [camArray objectAtIndex:2], [camArray objectAtIndex:3]];
@@ -268,10 +309,16 @@ static ContentManager *manager;
                     NSString *finalStringPush = [NSString stringWithFormat:@"你的 500 米範圍內於%@往%@方向近%@有固定式快相機。", [camArray objectAtIndex:1], [camArray objectAtIndex:2], [camArray objectAtIndex:3]];
                     
                     //                    [engine speakAndCache:finalString];
-                    [speakManager speak:finalString];
+                    //[speakManager speak:finalString];
+                    [speakManager speak:@"請留意車速"];
                     
                     if(isBackground)
                         [self doLocalPush:finalStringPush];
+                    
+                    if(isGenerateNotification)
+                    {
+                        [[NSNotificationCenter defaultCenter]postNotificationName:@"SpeedCamDetected" object:nil];
+                    }
                 }
             }
         }
@@ -293,7 +340,7 @@ static ContentManager *manager;
         if(isDebug)
             NSLog(@" the degress is = %f",fmod(degrees, 360));
     }
-
+    
 }
 
 #pragma mark - location manager delegate
@@ -310,6 +357,34 @@ static ContentManager *manager;
         [[NSNotificationCenter defaultCenter]postNotificationName:@"LocationUpdate"
                                                            object:self.lastLocation];
     }
+}
+
+//double heading = -2036;
+-(void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
+    //NSLog(@"heading: %.2f", newHeading.trueHeading);
+    if(_heading == -2036)
+    {
+        _heading  = newHeading.trueHeading;
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"LocationUpdate"
+                                                           object:self.lastLocation];
+    } else {
+        if((_heading <= 30 && newHeading.trueHeading >= 330) ||
+           (newHeading.trueHeading <= 30 && _heading >= 330))
+        {
+            if((_heading+newHeading.trueHeading-360)>30)
+            {
+                _heading  = newHeading.trueHeading;
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"LocationUpdate"
+                                                                   object:self.lastLocation];
+            }
+        } else if(fabs(_heading - newHeading.trueHeading) > 30 )
+        {
+            _heading  = newHeading.trueHeading;
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"LocationUpdate"
+                                                               object:self.lastLocation];
+        }
+    }
+    
 }
 
 #pragma mark - schedule local notification

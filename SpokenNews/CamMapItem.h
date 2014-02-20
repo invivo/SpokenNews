@@ -11,6 +11,7 @@
 @interface CamMapItem : NSObject <MKAnnotation>
 @property (assign) double lat;
 @property (assign) double lng;
+@property (nonatomic, copy) NSString *serial;
 @property (nonatomic, copy) NSString *camDescription;
 @property (nonatomic, copy) NSString *webAddress;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;

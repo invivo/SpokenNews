@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CamMapItem.h"
+#import "ParkMapItem.h"
 #import "GasMapItem.h"
 
 @interface PSIDataStore : NSObject
@@ -20,4 +21,5 @@
 
 -(CamMapItem*)getNearestTrafficCam:(CLLocation*)location;
 -(NSArray*)getNearestGasStations:(CLLocation*)location;
+-(NSArray*)getNearestParkingLot:(CLLocation*)location;
 @end

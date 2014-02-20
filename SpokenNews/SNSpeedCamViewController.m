@@ -41,6 +41,7 @@
 //    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 }
 
+NSTimer * t;
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^(void){
@@ -51,6 +52,7 @@
         alertIcon.alpha =1;
         alertBadge.transform = CGAffineTransformMakeTranslation(0, 0);
     }completion:nil];
+    t =[NSTimer scheduledTimerWithTimeInterval:6.0f target:self selector:@selector(closeBtnClicked:) userInfo:nil repeats:NO];
 }
 
 - (IBAction)closeBtnClicked:(id)sender{
@@ -61,6 +63,13 @@
         closeBtn.transform = CGAffineTransformMakeTranslation(0, 200);
         alertIcon.alpha =0;
         alertBadge.transform = CGAffineTransformMakeTranslation(0, -50);
+        if(t!= nil)
+        {
+            if([t isValid])
+            {
+                [t invalidate];
+            }
+        }
     }completion:^(BOOL isFinished){
         [self dismissViewControllerAnimated:YES completion:nil];
     }];

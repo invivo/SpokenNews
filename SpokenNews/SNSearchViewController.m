@@ -10,6 +10,9 @@
 #import "SearchResultCell.h"
 #import "SpeakManager.h"
 #import <CoreLocation/CoreLocation.h>
+#import "JNJGoogleMapsActivity.h"
+#import "AppleMapsActivity.h"
+
 @interface SNSearchViewController ()
 
 @end
@@ -20,6 +23,7 @@ int searchType;
 -(void)setSearchType:(int)type{
     searchType = type;
 }
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,10 +58,17 @@ int searchType;
     }
 }
 
+BOOL isFirst;
 -(void)viewDidAppear:(BOOL)animated{
+    isFirst = NO;
     [super viewDidAppear:animated];
     //NSArray *gasStationList = [[PSIDataStore sharedInstance]gasStationList];
-    searchResultArr = [[PSIDataStore sharedInstance]getNearestGasStations:myMapView.userLocation.location];
+    if(searchType==0)
+    {
+        searchResultArr = [[PSIDataStore sharedInstance]getNearestParkingLot:myMapView.userLocation.location];
+    } else {
+        searchResultArr = [[PSIDataStore sharedInstance]getNearestGasStations:myMapView.userLocation.location];
+    }
     [myMapView addAnnotations:searchResultArr];
     [_tableView reloadData];
     [self handlePage:currentPage];
@@ -80,9 +91,24 @@ int currentPage;
 }
 
 -(void)handlePage:(int)pageNo{
-    
-    NSString *strToSpeak = [NSString stringWithFormat:@"%@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
-                            [(id)[searchResultArr objectAtIndex:currentPage]addr]];
+
+    NSString *strToSpeak;
+    if(!isFirst)
+    {
+        isFirst = YES;
+        if(searchType == 0)
+        {
+            strToSpeak = [NSString stringWithFormat:@"現正顯示最近你的 5 個停車場，第一個係 %@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
+                          [(id)[searchResultArr objectAtIndex:currentPage]addr]];
+        } else {
+            strToSpeak = [NSString stringWithFormat:@"現正顯示最近你的 5 個油站，第一個係 %@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
+                          [(id)[searchResultArr objectAtIndex:currentPage]addr]];
+        }
+    } else {
+        strToSpeak = [NSString stringWithFormat:@"%@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
+                      [(id)[searchResultArr objectAtIndex:currentPage]addr]];
+    }
+
     
     [[SpeakManager sharedInstance]forceSpeak:strToSpeak];
     
@@ -122,6 +148,67 @@ int currentPage;
     return cell;
 }
 
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    NSLog(@"tapped");
+    if([view.annotation isKindOfClass:[GasMapItem class]]||[view.annotation isKindOfClass:[ParkMapItem class]])
+    {
+        GasMapItem *item = [view annotation];
+        NSURL *testURL = [NSURL URLWithString:@"comgooglemaps-x-callback://"];
+        if ([[UIApplication sharedApplication] canOpenURL:testURL]) {
+            [[SpeakManager sharedInstance]forceSpeak:@"請選擇導航 App"];
+            //NSLog(@"show google map option");
+            JNJGoogleMapsActivity *googleMapsActivity = [[JNJGoogleMapsActivity alloc] init];
+            googleMapsActivity.latitude = [NSNumber numberWithDouble:item.lat];//@(35.7719);
+            googleMapsActivity.longitude = [NSNumber numberWithDouble:item.lng];//@(-78.6389);
+            googleMapsActivity.mapMode = JNJGoogleMapsMapMode.standard;
+            googleMapsActivity.directionMode = JNJGoogleMapsDirectionMode.driving;
+            
+            AppleMapsActivity* appleMapsActivity = [[AppleMapsActivity alloc]init];
+            appleMapsActivity.latitude = [NSNumber numberWithDouble:item.lat];//@(35.7719);
+            appleMapsActivity.longitude = [NSNumber numberWithDouble:item.lng];//@(35.7719);
+            
+            UIActivityViewController *viewController = [[UIActivityViewController alloc] initWithActivityItems:@[] applicationActivities:@[appleMapsActivity, googleMapsActivity]];
+            [self presentViewController:viewController animated:YES completion:nil];
+            
+        } else {
+            MKPlacemark *placemark = [[MKPlacemark alloc]initWithCoordinate:item.coordinate addressDictionary:nil];
+            MKMapItem *mapItem = [[MKMapItem alloc]initWithPlacemark:placemark];
+            //open map in ios map and do navigation
+            [mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving}];
+        }
+    }
+}
+
+
+-(MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    MKAnnotationView *annotationView;
+    if([annotation isKindOfClass:[GasMapItem class]]||[annotation isKindOfClass:[ParkMapItem class]])
+    {
+        annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"PinItem"];
+        if(annotationView == nil)
+        {
+            annotationView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"PinItem"];
+            [annotationView setCanShowCallout:YES];
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn setFrame:CGRectMake(0,0,44.5, 44.5)];
+            //[btn setImage:[UIImage imageNamed:@"navBtn"] forState:UIControlStateNormal];
+            [btn setBackgroundImage:[UIImage imageNamed:@"navBtn"] forState:UIControlStateNormal];
+            //[btn setTitle:@"hihi" forState:UIControlStateNormal];
+            [annotationView setLeftCalloutAccessoryView:btn];
+        }
+    } else if([annotation isKindOfClass:[MKUserLocation class]])
+    {
+        return nil;
+    }
+    else {
+        annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"OtherItem"];
+        if(annotationView == nil)
+        {
+            annotationView = [[MKAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:@"OtherItem"];
+        }
+    }
+    return annotationView;
+}
 /*
 #pragma mark - Navigation
 
