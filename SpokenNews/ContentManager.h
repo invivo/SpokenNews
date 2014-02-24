@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SpeakManager.h"
 #import "PrefStore.h"
+#import "SpeakObject.h"
 
 @protocol ContentManagerDelegate <NSObject>
 
@@ -27,10 +28,15 @@
     PrefStore *prefStore;
     
     BOOL isGenerateNotification;
+    
+    int speakCounter;
+    NSMutableArray *speakObjQueue;
 }
 @property (nonatomic, copy) NSString *lastNewsString;
 @property (nonatomic, copy) CLLocation* lastLocation;
 @property (assign) double heading;
+
+-(CLLocation*)requestLastLocation;
 +(ContentManager*)sharedInstance;
 
 -(void)updateGPSType;
@@ -40,4 +46,6 @@
 
 -(void)startFeedingContent;
 -(void)stopFeedingContent;
+
+-(void)enqueueToSpeak:(NSString*)str withPriority:(int)priority;
 @end

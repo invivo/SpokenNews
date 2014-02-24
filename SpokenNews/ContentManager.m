@@ -30,30 +30,17 @@ static ContentManager *manager;
         prefStore = [PrefStore sharedInstance];
         manager = [[CLLocationManager alloc]init];
         
+        speakObjQueue = [[NSMutableArray alloc]init];
+        
         //load xml
         NSString *path = [[NSBundle mainBundle] pathForResource:@"StationarySpeedRadar" ofType:@"kml"];
         NSURL *url = [NSURL fileURLWithPath:path];
         kmlParser = [[KMLParser alloc] initWithURL:url];
         [kmlParser parseKML];
         
-        //[NSThread detachNewThreadSelector:@selector(testThread1) toTarget:self withObject:nil];
-        //[NSThread detachNewThreadSelector:@selector(testThread2) toTarget:self withObject:nil];
         self.heading = -2036;
     }
     return self;
-}
-
--(void)testThread1{
-    [NSThread sleepForTimeInterval:50];
-    NSLog(@"testthread1");
-}
-
--(void)testThread2{
-    for(int i =0; i< 25; i++)
-    {
-        [NSThread sleepForTimeInterval:2];
-        NSLog(@"testthread2");
-    }
 }
 
 -(void)startFeedingContent{
@@ -90,10 +77,7 @@ static ContentManager *manager;
             [spokenNewsVC stopFeedingNews];
         }
     } else {
-        if(isDebug)
-        {
-            NSLog(@"Authorized");
-        }
+        if(isDebug) NSLog(@"Authorized");
     }
 }
 
@@ -109,6 +93,7 @@ static ContentManager *manager;
     {
         [speakThread cancel];
     }
+    [speakObjQueue removeAllObjects];
 }
 
 -(void)updateGPSType{
@@ -116,14 +101,48 @@ static ContentManager *manager;
 }
 
 #pragma mark - content processing in foreground & background mode
+-(void)enqueueToSpeak:(NSString*)str withPriority:(int)priority{
+    SpeakObject *obj = [[SpeakObject alloc]init];
+    [obj setText:str];
+    [obj setPriority:priority];
+    if(priority == 1)
+    {
+        [speakObjQueue insertObject:obj atIndex:0];
+    } else {
+        [speakObjQueue addObject:obj];
+    }
+}
+
+BOOL speakCountMax = 30;
 -(void)bgTaskForSpeak{
     @autoreleasepool {
-        NSLog(@"start working speak task");
+        if(isDebug) NSLog(@"start working speak task");
         while(!isTerminated)
         {
-            [NSThread sleepForTimeInterval:15];
+            [NSThread sleepForTimeInterval:1];
             if(!isTerminated)
-                [self performSelectorOnMainThread:@selector(speakOnMainThread) withObject:nil waitUntilDone:YES];
+            {
+                if([speakObjQueue count] > 0 && speakCounter < speakCountMax)
+                {
+                    if([(SpeakObject*)[speakObjQueue objectAtIndex:0]priority] > 0)
+                    {
+                        if(isDebug) NSLog(@"ContentManager: Speak Urgent Object");
+                        speakCounter = 0;
+                        [self performSelectorOnMainThread:@selector(speakOnMainThread) withObject:nil waitUntilDone:YES];
+                    } else {
+                        speakCounter++;
+                    }
+                } else {
+                    if(speakCounter>speakCountMax)
+                    {
+                        if(isDebug) NSLog(@"ContentManager: Speak News Object");
+                        speakCounter = 0;
+                        [self performSelectorOnMainThread:@selector(speakOnMainThread) withObject:nil waitUntilDone:YES];
+                    } else {
+                        speakCounter++;
+                    }
+                }
+            }
         }
     }
 }
@@ -131,62 +150,60 @@ static ContentManager *manager;
 -(void)speakOnMainThread{
     if([speakManager isAvaiableForSpeaking])
     {
-        if(isDebug) NSLog(@"handle speak cycle: %lu", [speakQueue count]);
-        if([speakQueue count]>0)
+        if(isDebug) NSLog(@"Content Manager: Handle Speak Cycle: %lu", (unsigned long)[speakObjQueue count]);
+        if([speakObjQueue count]>0)
         {
-            if(![coreDataHelper isDataExist:[speakQueue objectAtIndex:0]])
+            if(![coreDataHelper isDataExist:[(SpeakObject*)[speakObjQueue objectAtIndex:0]text]])
             {
+                SpeakObject *speakObj = [speakObjQueue objectAtIndex:0];
+                
+                if([speakObjQueue count] > 1) {
+                    [speakObjQueue removeObjectAtIndex:0];
+                } else {
+                    [speakObjQueue removeAllObjects];
+                }
+                
                 if(isBackground)
                 {
-                    //if(isUpdateNews)
-                    {
-                        NSLog(@"show notification");
-                        //[self doLocalPush:[speakQueue objectAtIndex:0]];
-                        [self performSelectorOnMainThread:@selector(doLocalPush:) withObject:[speakQueue objectAtIndex:0] waitUntilDone:YES];
-                    }
+                    if(isDebug) NSLog(@"Content Manager: Show Notification");
+                    [self performSelectorOnMainThread:@selector(doLocalPush:)
+                                           withObject:[speakObj text]
+                                        waitUntilDone:YES];
                 }
                 
                 BOOL isDemo = NO;
-                if(!isDemo)
-                    [speakManager speak:[speakQueue objectAtIndex:0]];
-                
-                self.lastNewsString = [speakQueue objectAtIndex:0];
-                [[NSNotificationCenter defaultCenter]postNotificationName:@"NewsUpdate" object:self.lastNewsString userInfo:nil];
+                if(!isDemo) [speakManager speak:[speakObj text]];
                 
                 
-                NewsData *obj = [NSEntityDescription insertNewObjectForEntityForName:@"NewsData" inManagedObjectContext:[coreDataHelper managedObjectContext]];
-                [obj setContent:[speakQueue objectAtIndex:0]];
-                [obj setTimestamp:[NSDate date]];
-                [obj setSpoken:[NSNumber numberWithBool:NO]];
-                
-                
-                if([speakQueue count] > 1)
-                    [speakQueue removeObjectAtIndex:0];
-                else
-                    [speakQueue removeAllObjects];
-                
-                if(isDebug)
-                    NSLog(@"news last: %lu", (unsigned long)[speakQueue count]);
+                if(speakObj.priority == 0)
+                {
+                    self.lastNewsString = [speakObj text];
+                    [[NSNotificationCenter defaultCenter]postNotificationName:@"NewsUpdate"
+                                                                       object:self.lastNewsString userInfo:nil];
+                    NewsData *obj = [NSEntityDescription insertNewObjectForEntityForName:@"NewsData" inManagedObjectContext:[coreDataHelper managedObjectContext]];
+                    [obj setContent:[speakObj text]];
+                    [obj setTimestamp:[NSDate date]];
+                    [obj setSpoken:[NSNumber numberWithBool:NO]];
+                }
             } else {
-                //                            isSpeakable = NO;
-                if(isDebug)
-                    NSLog(@"news last: %lu", (unsigned long)[speakQueue count]);
-                
-                if([speakQueue count] > 1)
-                    [speakQueue removeObjectAtIndex:0];
-                else
-                    [speakQueue removeAllObjects];
+                if([speakObjQueue count] > 1) {
+                    [speakObjQueue removeObjectAtIndex:0];
+                } else {
+                    [speakObjQueue removeAllObjects];
+                }
             }
+            if(isDebug) NSLog(@"news last: %lu", (unsigned long)[speakObjQueue count]);
         }
     }
 }
 
+BOOL contentCountMax = 180;
 -(void)bgTaskForContent{
     @autoreleasepool {
-        NSLog(@"start working content task");
+        NSLog(@"ContentManager: Start Working Content Task");
         while(!isTerminated)
         {
-            NSLog(@"downloading information");
+            NSLog(@"ContentManager: Downloading Information");
             //    arrayPos = 0;
             // 1
             NSURL *tutorialsUrl = [NSURL URLWithString:@"http://m.rthk.hk/traffic_zh.htm"];
@@ -203,27 +220,28 @@ static ContentManager *manager;
             NSArray *newsArray = [[NSArray alloc]initWithArray:tutorialsNodes];
             [self performSelectorOnMainThread:@selector(updateNewsContentOnMainThread:) withObject:newsArray waitUntilDone:YES];
             
-            [NSThread sleepForTimeInterval:120];
+            [NSThread sleepForTimeInterval:180];
         }
     }
 }
 
 -(void)updateNewsContentOnMainThread:(NSArray*)newsArray{
-    if(isDebug) NSLog(@"Content Manager: update content to news Array");
+    if(isDebug) NSLog(@"ContentManager: update content to news Array");
     
-    if(speakQueue == nil)
+    if(speakObjQueue == nil)
     {
         //init the speakQueue on demand
-        speakQueue = [[NSMutableArray alloc]init];
+        speakObjQueue = [[NSMutableArray alloc]init];
     }
     
     for (long i = ([newsArray count]-1); i>=0; i--) {
         TFHppleElement *element = [newsArray objectAtIndex:i];
         
         BOOL isPass = YES;
-        for(NSString *str in speakQueue)
+        //for(NSString *str in speakQueue)
+        for(SpeakObject *obj in speakObjQueue)
         {
-            if([str isEqualToString:[[element firstChild]content]] ||
+            if([obj.text isEqualToString:[[element firstChild]content]] ||
                [coreDataHelper isDataExist:[[element firstChild]content]])
             {
                 isPass = NO;
@@ -231,21 +249,27 @@ static ContentManager *manager;
         }
         if(isPass)
         {
-            [speakQueue addObject:[[element firstChild]content]];
+            if(isDebug) NSLog(@"ContentManager: Enqueue News Data");
+            //[speakQueue addObject:[[element firstChild]content]];
             //NSLog(@"%@", [[element firstChild]content]);
+            //[speakObjQueue addObject:[[SpeakObject alloc]initWithText:[[element firstChild]content] withPriority:0]];
+            [self enqueueToSpeak:[[element firstChild]content] withPriority:0];
         }
     }
 }
 
 -(void)findNearSpeedCam:(CLLocation*)userLocation{
+    /*
     if(isDebug)
-        NSLog(@"find near speed cam");
+        NSLog(@"Content Manager: Start Finding Near Speed Cam");
+     */
     
     if(kmlParser != nil)
     {
+        /*
         if(isDebug)
-            NSLog(@"try find distance");
-        
+            NSLog(@"Content Manager: Try Finding Speed Cam");
+        */
         NSArray *placemarks = [kmlParser placemarks];
         
         
@@ -271,14 +295,18 @@ static ContentManager *manager;
         double dist = [[sortedNum objectAtIndex:0]doubleValue];
         if(dist > 1000)
         {
+            /*
             if(isDebug)
                 NSLog(@"%.1f km",dist/1000);
+             */
             //distanceLabel.text = [NSString stringWithFormat:@"%.1f km",dist/1000];
         }
         else
         {
+            /*
             if(isDebug)
                 NSLog(@"%.1f m", dist);
+             */
             if(dist < 500)
             {
                 id<MKAnnotation> nearestAnnotation = [[disDict objectForKey:[[sortedNum objectAtIndex:0]stringValue]]objectForKey:@"point"];
@@ -304,13 +332,17 @@ static ContentManager *manager;
                         }
                     }
                     
+                    /*
                     NSString *finalString = [NSString stringWithFormat:@"你的五百米範圍內於%@往%@方向近%@有快相機。", [camArray objectAtIndex:1], [camArray objectAtIndex:2], [camArray objectAtIndex:3]];
-                    
+                    */
                     NSString *finalStringPush = [NSString stringWithFormat:@"你的 500 米範圍內於%@往%@方向近%@有固定式快相機。", [camArray objectAtIndex:1], [camArray objectAtIndex:2], [camArray objectAtIndex:3]];
                     
                     //                    [engine speakAndCache:finalString];
                     //[speakManager speak:finalString];
-                    [speakManager speak:@"請留意車速"];
+                    //[speakManager speak:@"請留意車速"];
+                    //[speakObjQueue addObject:[[SpeakObject alloc]initWithText:@"請留意車速" withPriority:1]];
+                    //[speakObjQueue insertObject:[[SpeakObject alloc]initWithText:@"請留意車速" withPriority:1] atIndex:0];
+                    [self enqueueToSpeak:@"請留意車速" withPriority:1];
                     
                     if(isBackground)
                         [self doLocalPush:finalStringPush];
@@ -335,10 +367,12 @@ static ContentManager *manager;
         CLLocationDegrees xComponent = (cos(coord1.latitude) * sin(coord2.latitude)) - (sin(coord1.latitude) * cos(coord2.latitude) * cos(deltaLong));
         
         CLLocationDegrees radians = atan2(yComponent, xComponent);
-        CLLocationDegrees degrees = RAD_TO_DEG(radians) + 360;
+        //CLLocationDegrees degrees = RAD_TO_DEG(radians) + 360;
         
+        /*
         if(isDebug)
             NSLog(@" the degress is = %f",fmod(degrees, 360));
+         */
     }
     
 }
@@ -414,19 +448,19 @@ static ContentManager *manager;
     
     if(speakThread == nil)
     {
-        if(isDebug)NSLog(@"ContentManager: creating SpeakThread");
+        if(isDebug) NSLog(@"ContentManager: creating SpeakThread");
         speakThread = [[NSThread alloc]initWithTarget:self selector:@selector(bgTaskForSpeak) object:nil];
         [speakThread start];
     } else {
         @try{
             if([speakThread isCancelled] || [speakThread isFinished])
             {
-                if(isDebug)NSLog(@"ContentManager: start speakThread");
+                if(isDebug) NSLog(@"ContentManager: start speakThread");
                 [speakThread start];
             }
         }
         @catch(NSException *e){
-            if(isDebug)NSLog(@"ContentManager: creating SpeakThread");
+            if(isDebug) NSLog(@"ContentManager: creating SpeakThread");
             speakThread = [[NSThread alloc]initWithTarget:self selector:@selector(bgTaskForSpeak) object:nil];
             [speakThread start];
         }
@@ -436,23 +470,27 @@ static ContentManager *manager;
 - (void)handleContentThread{
     if(contentThread == nil)
     {
-        if(isDebug)NSLog(@"ContentManager: creating ContentThread");
+        if(isDebug) NSLog(@"ContentManager: creating ContentThread");
         contentThread = [[NSThread alloc]initWithTarget:self selector:@selector(bgTaskForContent) object:nil];
         [contentThread start];
     } else {
         @try{
             if([contentThread isCancelled] || [contentThread isFinished])
             {
-                if(isDebug)NSLog(@"ContentManager: start ContentThread");
+                if(isDebug) NSLog(@"ContentManager: start ContentThread");
                 [contentThread start];
             }
         }
         @catch(NSException *e){
-            if(isDebug)NSLog(@"ContentManager: creating SpeakThread");
+            if(isDebug) NSLog(@"ContentManager: Creating SpeakThread");
             contentThread = [[NSThread alloc]initWithTarget:self selector:@selector(bgTaskForContent) object:nil];
             [contentThread start];
         }
     }
+}
+
+-(CLLocation*)requestLastLocation{
+    return [manager location];
 }
 
 -(void)beginGenerateNotification{

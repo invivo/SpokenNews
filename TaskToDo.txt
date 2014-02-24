@@ -5,8 +5,8 @@
 5. 自動 search 就近停車場 (Done)
 6. 顯示新聞 (Done)
 7. 開關 Tracking (Done)
-8. 用更好的方法處理背景圖片 (有待更新)
-9. 處理 new 個 scroll (done)
+8. 用更好的方法處理背景圖片 (Done)
+9. 處理 new 個 scroll (Done)
 10. 改善 speak queue
 11. 第一次 load 叫人 set location (Done)
 12. 處理有時 search 商場得一個 result 問題

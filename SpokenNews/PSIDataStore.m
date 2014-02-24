@@ -209,6 +209,13 @@ double angleFromCoordinate(double lat1, double long1, double lat2, double long2)
 
 -(NSArray*)getNearestGasStations:(CLLocation*)location{
     int size = 5;
+    
+    CLLocation *theLocation = location;
+    if(theLocation == nil)
+    {
+        theLocation = [[ContentManager sharedInstance]requestLastLocation];
+    }
+    
     NSMutableArray *nearestGasStationList = [[NSMutableArray alloc]init];
     for(GasMapItem *mapItem in self.gasStationList)
     {
@@ -224,7 +231,8 @@ double angleFromCoordinate(double lat1, double long1, double lat2, double long2)
                 //in newgatstation
                 CLLocation *loc2 = [[CLLocation alloc]initWithLatitude:mapItem.lat longitude:mapItem.lng];
                 
-                if([location distanceFromLocation:loc1] > [location distanceFromLocation:loc2]){
+                if([theLocation distanceFromLocation:loc1] >
+                   [theLocation distanceFromLocation:loc2]){
                     [nearestGasStationList insertObject:mapItem atIndex:i];
                     if([nearestGasStationList count]>size)
                     {
@@ -240,6 +248,13 @@ double angleFromCoordinate(double lat1, double long1, double lat2, double long2)
 
 -(NSArray*)getNearestParkingLot:(CLLocation*)location{
     int size = 5;
+    
+    CLLocation *theLocation = location;
+    if(theLocation == nil)
+    {
+        theLocation = [[ContentManager sharedInstance]requestLastLocation];
+    }
+    
     NSMutableArray *nearestParkingLotList = [[NSMutableArray alloc]init];
     for(ParkMapItem *mapItem in self.carParkList)
     {
@@ -255,7 +270,8 @@ double angleFromCoordinate(double lat1, double long1, double lat2, double long2)
                 //in newgatstation
                 CLLocation *loc2 = [[CLLocation alloc]initWithLatitude:mapItem.lat longitude:mapItem.lng];
                 
-                if([location distanceFromLocation:loc1] > [location distanceFromLocation:loc2]){
+                if([theLocation distanceFromLocation:loc1] >
+                   [theLocation distanceFromLocation:loc2]){
                     [nearestParkingLotList insertObject:mapItem atIndex:i];
                     if([nearestParkingLotList count]>size)
                     {

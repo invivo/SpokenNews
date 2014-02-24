@@ -40,6 +40,7 @@ UIImage *_transImage;
     [CIContext contextWithEAGLContext:_eaglContext options:@{kCIContextWorkingColorSpace : [NSNull null]} ];
     
     queue = [[NSOperationQueue alloc]init];
+    [queue setMaxConcurrentOperationCount:1];
     
     _maskingImage = [UIImage imageNamed:@"imgMask"];
     _transImage = [UIImage imageNamed:@"trans"];
@@ -68,20 +69,19 @@ UIImage *_transImage;
 -(void)receivedLocationUpdateNotification:(NSNotification*)notification{
     
     // @autoreleasepool {
-    
-    
     //NSLog(@"%@", notification);
-    if([queue operationCount] > 1)
-    {
-        NSLog(@"cancel queued operation");
-        [queue cancelAllOperations];
-    }
     
+    //won't load the same cam
     CLLocation *loc = [notification object];
     CamMapItem *nearestCam = [[PSIDataStore sharedInstance]getNearestTrafficCam:loc];
-    //won't load the same cam
     if(![[nearestCam serial] isEqualToString:lastCamSerial])
     {
+        if([queue operationCount] > 1)
+        {
+            NSLog(@"cancel queued operation");
+            [queue cancelAllOperations];
+        }
+        
         if(defaultBG.alpha > 1.0f)
         {
             

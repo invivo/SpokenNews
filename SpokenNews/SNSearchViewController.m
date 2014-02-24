@@ -98,19 +98,18 @@ int currentPage;
         isFirst = YES;
         if(searchType == 0)
         {
-            strToSpeak = [NSString stringWithFormat:@"現正顯示最近你的 5 個停車場，第一個係 %@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
+            strToSpeak = [NSString stringWithFormat:@"最近你的 5 個停車場，第一個係 %@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
                           [(id)[searchResultArr objectAtIndex:currentPage]addr]];
         } else {
-            strToSpeak = [NSString stringWithFormat:@"現正顯示最近你的 5 個油站，第一個係 %@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
+            strToSpeak = [NSString stringWithFormat:@"最近你的 5 個油站，第一個係 %@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
                           [(id)[searchResultArr objectAtIndex:currentPage]addr]];
         }
     } else {
         strToSpeak = [NSString stringWithFormat:@"%@，係 %@", [(id)[searchResultArr objectAtIndex:currentPage]name],
                       [(id)[searchResultArr objectAtIndex:currentPage]addr]];
     }
-
     
-    [[SpeakManager sharedInstance]forceSpeak:strToSpeak];
+    [[ContentManager sharedInstance]enqueueToSpeak:strToSpeak withPriority:1];
     
     CLLocation *loc1 = [[CLLocation alloc]initWithLatitude:[(id)[searchResultArr objectAtIndex:currentPage]lat]
                                                  longitude:[(id)[searchResultArr objectAtIndex:currentPage]lng]];
@@ -155,8 +154,8 @@ int currentPage;
         GasMapItem *item = [view annotation];
         NSURL *testURL = [NSURL URLWithString:@"comgooglemaps-x-callback://"];
         if ([[UIApplication sharedApplication] canOpenURL:testURL]) {
-            [[SpeakManager sharedInstance]forceSpeak:@"請選擇導航 App"];
-            //NSLog(@"show google map option");
+            [[ContentManager sharedInstance]enqueueToSpeak:@"請選擇導航應用" withPriority:1];
+            
             JNJGoogleMapsActivity *googleMapsActivity = [[JNJGoogleMapsActivity alloc] init];
             googleMapsActivity.latitude = [NSNumber numberWithDouble:item.lat];//@(35.7719);
             googleMapsActivity.longitude = [NSNumber numberWithDouble:item.lng];//@(-78.6389);

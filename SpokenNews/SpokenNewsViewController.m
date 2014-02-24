@@ -11,7 +11,9 @@
 #import "SNSearchViewController.h"
 #import "AppDelegate.h"
 
+
 @interface SpokenNewsViewController ()
+@property (weak, nonatomic) IBOutlet UIView *adContainer;
 
 @end
 
@@ -52,7 +54,7 @@
     [self applyMotionEffect:controlUI];
     [self applyMotionEffect:camLocLabel];
     
-    
+    self.adContainer.transform = CGAffineTransformMakeTranslation(0, 100);
     
     UIInterpolatingMotionEffect *xAxis = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     xAxis.minimumRelativeValue = [NSNumber numberWithFloat:5.0];
@@ -69,7 +71,21 @@
     [bgCamView addMotionEffect:group];
     bgCamView.transform = CGAffineTransformMakeScale(1.02, 1.02);
     
+    if([GADBannerView class])
+    {
+        if (!self.gAdBannerView)
+        {
+            CGRect rect = CGRectMake(0, self.view.frame.size.height, GAD_SIZE_320x50.width, GAD_SIZE_320x50.height);
+            self.gAdBannerView = [[GADBannerView alloc] initWithFrame:rect];
+            self.gAdBannerView.adUnitID = @"a1530622b508a63";
+            self.gAdBannerView.rootViewController = self;
+            self.gAdBannerView.delegate = self;
+            self.gAdBannerView.hidden = NO;
+            [self.adContainer addSubview:self.gAdBannerView];
+        }
+    }
     
+    [self.iAdBannerView setHidden:YES];
 }
 
 
@@ -171,16 +187,22 @@ BOOL isLaunched = NO;
     {
         [self releaseScrollViewContentSizeWithAnimation:NO];
     }
+    [self showAdBanner];
     isDriving = YES;
 }
 
 -(void)stopFeedingNews{
+    
+    if(adTimer != nil) { [adTimer invalidate]; adTimer = nil; }    
+    
     [driveBtn setImage:[UIImage imageNamed:@"drive_btn_off"] forState:UIControlStateNormal];
     ContentManager *contentManager = [ContentManager sharedInstance];
     [contentManager stopFeedingContent];
     [UIView animateWithDuration:0.5f animations:^(void){
         [trafficCamPosView setAlpha:0];
+        self.adContainer.transform = CGAffineTransformMakeTranslation(0, 100);
     }];
+//    [self hideAdBanner];
     isDriving = NO;
 }
 
@@ -210,6 +232,26 @@ UIImage *blurImg;
         [vc setSearchType:0];
     } else if([[segue identifier]isEqualToString:@"showBigNewsSegue"]){
         newsListController = (SNNewsListController*)[segue destinationViewController];
+    }
+}
+
+- (IBAction) showSearchAction:(id)sender{
+    int searchType = (int)[sender tag];
+    if(isDriving)
+    {
+        if(searchType == 1)
+        {
+            [self performSegueWithIdentifier:@"showGasSegue" sender:nil];
+        } else {
+            [self performSegueWithIdentifier:@"showParkingSegue" sender:nil];
+        }
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"尚未啟動定位功能"
+                                                           message:@"請先按「開始駕駛」才可使用搜尋功能。"
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"明白"
+                                                 otherButtonTitles: nil];
+        [alertView show];
     }
 }
 
@@ -401,5 +443,92 @@ NSTimer *timer;
  // Pass the selected object to the new view controller.
  }
  */
+
+#pragma mark - ad deleagte
+NSTimer *adTimer;
+-(void)showAdBanner{
+    if(adTimer != nil) { [adTimer invalidate]; adTimer = nil; }
+    [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^(void){
+                         self.adContainer.transform = CGAffineTransformMakeTranslation(0, 0);
+                     }completion:^(BOOL isFinished){
+                         if(isDriving)
+                         {
+                             adTimer = [NSTimer scheduledTimerWithTimeInterval:120 target:self
+                                                                      selector:@selector(hideAdBanner)
+                                                                      userInfo:nil repeats:NO];
+                         }
+                         
+                         /*
+                         [UIView animateWithDuration:0.3f delay:120 options:UIViewAnimationOptionBeginFromCurrentState
+                                          animations:^(void){
+                                              self.adContainer.transform = CGAffineTransformMakeTranslation(0, 100);
+                                          } completion:^(BOOL isFinished){
+                                              if(isDriving)
+                                              {
+                                                  adTimer = [NSTimer scheduledTimerWithTimeInterval:200 target:self
+                                                                                           selector:@selector(showAdBanner)
+                                                                                           userInfo:nil repeats:NO];
+                                              }
+                                          }];
+                          */
+                     }];
+}
+
+
+-(void)hideAdBanner{
+    if(adTimer != nil) { [adTimer invalidate]; adTimer = nil; }
+    
+    [UIView animateWithDuration:0.3f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^(void){
+                         self.adContainer.transform = CGAffineTransformMakeTranslation(0, 100);
+                     }completion:^(BOOL isFinished){
+                         if(isDriving)
+                         {
+                             adTimer = [NSTimer scheduledTimerWithTimeInterval:200 target:self
+                                                                      selector:@selector(showAdBanner)
+                                                                      userInfo:nil repeats:NO];
+                         }
+                     }];
+    //
+    //    [UIView animateWithDuration:0.3f animations:^(void){
+//        self.adContainer.transform = CGAffineTransformMakeTranslation(0, 100);
+//    }];
+//    if(isDriving)
+//    {
+//        adTimer = [NSTimer scheduledTimerWithTimeInterval:200 target:self
+//                                                 selector:@selector(showAdBanner)
+//                                                 userInfo:nil repeats:NO];
+//    }
+}
+
+BOOL failedToLoadiAd = NO;
+#pragma mark - ad deleagte
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    [self.iAdBannerView setHidden:YES];
+    if(self.gAdBannerView != nil)
+        [self.gAdBannerView setHidden:NO];
+    
+    failedToLoadiAd = YES;
+}
+
+- (void)bannerViewWillLoadAd:(ADBannerView *)banner
+{
+    [self.iAdBannerView setHidden:NO];
+    if(self.gAdBannerView != nil)
+        [self.gAdBannerView setHidden:YES];
+}
+
+-(void)adViewDidReceiveAd:(GADBannerView *)view{
+    if(failedToLoadiAd){
+        [self.iAdBannerView setHidden:NO];
+        [self.gAdBannerView setHidden:YES];
+    }
+}
+
+-(void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error{
+    [self.iAdBannerView setHidden:YES];
+    [self.gAdBannerView setHidden:NO];
+}
 
 @end

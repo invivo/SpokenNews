@@ -11,8 +11,12 @@
 #import "ContentManager.h"
 #import "GlobalHeader.h"
 #import "SNNewsListController.h"
+#import <iAd/iAd.h>
+#import "GADBannerView.h"
+#import "GADBannerViewDelegate.h"
 
-@interface SpokenNewsViewController : UIViewController<UIAlertViewDelegate>
+@interface SpokenNewsViewController : UIViewController<UIAlertViewDelegate,
+GADBannerViewDelegate, ADBannerViewDelegate>
 {
     IBOutlet UIView *newsView;
     IBOutlet UIView *audioControl;
@@ -34,7 +38,9 @@
     IBOutlet UIView *trafficCamPosView;
     
     IBOutlet UIScrollView *newsScrollView;
-    
+
+    IBOutlet ADBannerView *adBanner;
+
     CIContext *_ciContext;
     EAGLContext *_eaglContext;
     
@@ -49,6 +55,10 @@
     
     SNNewsListController *newsListController;
 }
+
+@property (strong, nonatomic) GADBannerView *gAdBannerView;
+@property (strong, nonatomic) IBOutlet ADBannerView *iAdBannerView;
+
 @property (nonatomic, strong) CIContext *ciContext;
 -(void)startFeedingNews;
 -(void)stopFeedingNews;

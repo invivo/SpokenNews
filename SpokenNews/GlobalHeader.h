@@ -23,7 +23,7 @@ SpokenNewsViewController *spokenNewsVC;
 NewsViewController *viewController;
 KMLParser *kmlParser;
 
-NSMutableArray *speakQueue;
+//NSMutableArray *speakQueue;
 
 CoreDataHelper *coreDataHelper;
 

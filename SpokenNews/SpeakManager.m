@@ -64,7 +64,8 @@ static SpeakManager* manager;
 }
 
 -(BOOL)isAvaiableForSpeaking{
-    return !isSpeaking;
+    //return !isSpeaking;
+    return ![mNativeEngine isPlaying];
 }
 
 -(void)enableDriving:(BOOL)_isDriving{
@@ -76,82 +77,50 @@ static SpeakManager* manager;
     }
 }
 
--(void)forceSpeak:(id)obj{
-    MPMusicPlaybackState state = musicPlayer.playbackState;
-    if(isDebug)
-    {
-        NSLog(@"pause before speak and cache %ld", (long)state);
-        NSLog(@"playing: %d, paused: %d interruped: %d", MPMusicPlaybackStatePlaying, MPMusicPlaybackStatePaused, MPMusicPlaybackStateInterrupted);
-    }
-    if(musicPlayer.playbackState == MPMusicPlaybackStatePlaying)
-    {
-        if(isDebug)
-            NSLog(@"pause and speak");
-        [musicPlayer pause];
-        isMusicPausedBySelf = YES;
-        //speak route to callback;
 
-    } else if(musicPlayer.playbackState == MPMusicPlaybackStateInterrupted)
-    {
-        if(![mNativeEngine isPlaying])
-        {
-            //[engine speakAndCache:checkstr((NSString*)obj)];
-            //[mNativeEngine speak:checkstr((NSString*)obj)];
-        }
-        isMusicPausedBySelf = YES;
-    }
-    else if(musicPlayer.playbackState == MPMusicPlaybackStateStopped || musicPlayer.playbackState == MPMusicPlaybackStatePaused)
-    {
-        if(isDebug)
-            NSLog(@"speak directly: %@", obj);
-        isMusicPausedBySelf = NO;
-        
-        if(![mNativeEngine isPlaying]){
-            //[engine speakAndCache:checkstr((NSString*)obj)];
-            //[mNativeEngine speak:checkstr((NSString*)obj)];
-        }
-    }
-    //self.nextSentenceToSpeak = (NSString*)obj;
-    [mNativeEngine stop];
-    [mNativeEngine speak:checkstr((NSString*)obj)];
-}
-
+BOOL isOverlap = YES;
 -(void)speak:(id)obj{
-    MPMusicPlaybackState state = musicPlayer.playbackState;
-    if(isDebug)
+    if(isOverlap)
     {
-        NSLog(@"pause before speak and cache %ld", (long)state);
-        NSLog(@"playing: %d, paused: %d interruped: %d", MPMusicPlaybackStatePlaying, MPMusicPlaybackStatePaused, MPMusicPlaybackStateInterrupted);
-    }
-    if(musicPlayer.playbackState == MPMusicPlaybackStatePlaying)
-    {
-        if(isDebug)
-            NSLog(@"pause and speak");
-        [musicPlayer pause];
-        isMusicPausedBySelf = YES;
-        //speak route to callback;
         [mNativeEngine speak:checkstr((NSString*)obj)];
-    } else if(musicPlayer.playbackState == MPMusicPlaybackStateInterrupted)
-    {
-        if(![mNativeEngine isPlaying])
-        {
-            //[engine speakAndCache:checkstr((NSString*)obj)];
-            [mNativeEngine speak:checkstr((NSString*)obj)];
-        }
-        isMusicPausedBySelf = YES;
-    }
-    else if(musicPlayer.playbackState == MPMusicPlaybackStateStopped || musicPlayer.playbackState == MPMusicPlaybackStatePaused)
-    {
+        self.nextSentenceToSpeak = (NSString*)obj;
+    } else {
+        MPMusicPlaybackState state = musicPlayer.playbackState;
         if(isDebug)
-            NSLog(@"speak directly: %@", obj);
-        isMusicPausedBySelf = NO;
-        
-        if(![mNativeEngine isPlaying]){
-            //[engine speakAndCache:checkstr((NSString*)obj)];
-            [mNativeEngine speak:checkstr((NSString*)obj)];
+        {
+            NSLog(@"pause before speak and cache %ld", (long)state);
+            NSLog(@"playing: %d, paused: %d interruped: %d", MPMusicPlaybackStatePlaying, MPMusicPlaybackStatePaused, MPMusicPlaybackStateInterrupted);
         }
+        if(musicPlayer.playbackState == MPMusicPlaybackStatePlaying)
+        {
+            if(isDebug)
+                NSLog(@"pause and speak");
+            [musicPlayer pause];
+            isMusicPausedBySelf = YES;
+            //speak route to callback;
+            [mNativeEngine speak:checkstr((NSString*)obj)];
+        } else if(musicPlayer.playbackState == MPMusicPlaybackStateInterrupted)
+        {
+            if(![mNativeEngine isPlaying])
+            {
+                //[engine speakAndCache:checkstr((NSString*)obj)];
+                [mNativeEngine speak:checkstr((NSString*)obj)];
+            }
+            isMusicPausedBySelf = YES;
+        }
+        else if(musicPlayer.playbackState == MPMusicPlaybackStateStopped || musicPlayer.playbackState == MPMusicPlaybackStatePaused)
+        {
+            if(isDebug)
+                NSLog(@"speak directly: %@", obj);
+            isMusicPausedBySelf = NO;
+            
+            if(![mNativeEngine isPlaying]){
+                //[engine speakAndCache:checkstr((NSString*)obj)];
+                [mNativeEngine speak:checkstr((NSString*)obj)];
+            }
+        }
+        self.nextSentenceToSpeak = (NSString*)obj;
     }
-    self.nextSentenceToSpeak = (NSString*)obj;
 }
 
 #pragma mark - Meida Player Event
@@ -205,6 +174,7 @@ static SpeakManager* manager;
 NSString* checkstr(NSString* str)
 {
     str = [str stringByReplacingOccurrencesOfString:@"擠塞" withString:@"擠失"];
+    str = [str stringByReplacingOccurrencesOfString:@"塞車" withString:@"失車"];
     str = [str stringByReplacingOccurrencesOfString:@"銅鑼灣" withString:@"同羅彎"];
     str = [str stringByReplacingOccurrencesOfString:@"大嶼山" withString:@"大愚山"];
     str = [str stringByReplacingOccurrencesOfString:@"間" withString:@"諫"];

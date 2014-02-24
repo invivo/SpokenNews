@@ -120,38 +120,50 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="woT-RC-ERh" kind="modal" identifier="showParkingSegue" id="L4y-tS-R5m"/>
+                                            <action selector="showSearchAction:" destination="pAc-uh-4oo" eventType="touchUpInside" id="xXv-eK-dt0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sCg-x8-vPP">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sCg-x8-vPP">
                                         <rect key="frame" x="160" y="77" width="140" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="nearest_gas_btn.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="woT-RC-ERh" kind="modal" identifier="showGasSegue" id="pzz-Ve-Jx2"/>
+                                            <action selector="showSearchAction:" destination="pAc-uh-4oo" eventType="touchUpInside" id="ixv-CA-O2p"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dbh-0I-7ik">
-                                <rect key="frame" x="20" y="479" width="46" height="30"/>
+                                <rect key="frame" x="20" y="460" width="90" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="Button">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="speedCamBtnClicked:" destination="pAc-uh-4oo" eventType="touchUpInside" id="YrT-U4-Qih"/>
                                 </connections>
                             </button>
-                            <adBannerView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kj3-vt-QWb">
+                            <view opaque="NO" contentMode="scaleToFill" id="b6L-Sa-ceK" userLabel="Ad Container View">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                            </adBannerView>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kj3-vt-QWb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="pAc-uh-4oo" id="2Zf-kS-K54"/>
+                                        </connections>
+                                    </adBannerView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="OZg-jU-cC0">
-                                <rect key="frame" x="282" y="527" width="41" height="42"/>
+                                <rect key="frame" x="282" y="481" width="41" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="wjc-YG-kyo">
@@ -179,6 +191,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="adContainer" destination="b6L-Sa-ceK" id="BA4-cC-JuS"/>
                         <outlet property="audioControl" destination="7AE-cy-9s5" id="dgo-re-NtY"/>
                         <outlet property="bgCamView" destination="gbR-XF-Nsd" id="1fP-mx-R7R"/>
                         <outlet property="blurBGView" destination="359-qI-djo" id="dzi-lf-Bsu"/>
@@ -187,6 +200,7 @@
                         <outlet property="camView" destination="lyy-m2-EYP" id="FkI-Cj-Lpq"/>
                         <outlet property="controlUI" destination="gxD-dS-uVm" id="IH5-Zy-hRZ"/>
                         <outlet property="driveBtn" destination="9Gn-1n-XzG" id="frN-pm-Q5X"/>
+                        <outlet property="iAdBannerView" destination="kj3-vt-QWb" id="o13-R5-yT3"/>
                         <outlet property="newsScrollView" destination="KMS-lb-AeO" id="eXy-EY-Zpv"/>
                         <outlet property="theScorllView" destination="KMS-lb-AeO" id="DJG-DZ-RgR"/>
                         <outlet property="trafficCamLocLabel" destination="gML-jc-dV9" id="Dl8-st-9jB"/>
@@ -194,6 +208,8 @@
                         <outlet property="trafficCamTimeLabel" destination="sgI-bd-Kdz" id="MCh-LG-ozp"/>
                         <segue destination="iOY-6r-evF" kind="modal" identifier="speedCamSegue" modalTransitionStyle="crossDissolve" id="oJg-zp-B7x"/>
                         <segue destination="RNv-Dj-0YL" kind="modal" identifier="showFirstLaunch" id="9Cc-hc-huT"/>
+                        <segue destination="woT-RC-ERh" kind="modal" identifier="showParkingSegue" id="vLJ-x0-s0s"/>
+                        <segue destination="woT-RC-ERh" kind="modal" identifier="showGasSegue" id="PAa-pX-X2g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCR-WR-ywE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,6 +301,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9bG-WY-CVe"/>
                     <connections>
                         <outlet property="_tableView" destination="gdh-uQ-6fV" id="9TO-uI-rGT"/>
                         <outlet property="myMapView" destination="Ldh-hf-5Ia" id="lGk-Yh-AVh"/>
@@ -744,11 +761,11 @@
                             </imageView>
                             <view contentMode="scaleToFill" id="QjV-7b-VKF">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speed_cam_sign.png" id="riO-LL-p8K">
                                         <rect key="frame" x="35" y="159" width="250" height="250"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xep-4I-dO9">
                                         <rect key="frame" x="65" y="246" width="190" height="75"/>
@@ -762,7 +779,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0t0-c8-lxL">
                                 <rect key="frame" x="125" y="495" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" backgroundImage="carpark_closeBtn.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -774,14 +791,14 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500米範圍內有快相照相機" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lWZ-en-3zC">
                                 <rect key="frame" x="20" y="406" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快相照相機" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R8A-Ir-vxQ">
                                 <rect key="frame" x="18" y="58" width="143" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -839,7 +856,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9Cc-hc-huT"/>
-        <segue reference="pzz-Ve-Jx2"/>
+        <segue reference="Pmj-ar-W0d"/>
+        <segue reference="PAa-pX-X2g"/>
     </inferredMetricsTieBreakers>
 </document>

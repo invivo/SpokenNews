@@ -7,7 +7,7 @@
 //
 
 #import "SNSpeedCamViewController.h"
-
+#import "ContentManager.h"
 @interface SNSpeedCamViewController ()
 
 @end
@@ -53,6 +53,12 @@ NSTimer * t;
         alertBadge.transform = CGAffineTransformMakeTranslation(0, 0);
     }completion:nil];
     t =[NSTimer scheduledTimerWithTimeInterval:6.0f target:self selector:@selector(closeBtnClicked:) userInfo:nil repeats:NO];
+    
+    BOOL isDemo = NO;
+    if(isDemo)
+    {
+        [[ContentManager sharedInstance]enqueueToSpeak:@"請留意車速" withPriority:1];
+    }
 }
 
 - (IBAction)closeBtnClicked:(id)sender{

@@ -5,44 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>47D88B17-1FD6-4EC5-8EBA-AE8116F92EDC</string>
+	<string>27C97365-20FD-4049-A5DA-7208C8B69984</string>
 	<key>IDESourceControlProjectName</key>
 	<string>SpokenNews</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4F7AAE68-9E18-4EF4-A257-995722F877C2</key>
-		<string>ssh://invivogit.no-ip.org//git/spokennews.git</string>
+		<key>DDDF4128-DC08-41C8-B5DB-B941DD450A90</key>
+		<string>https://github.com/invivo/SpokenNews.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>SpokenNews.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4F7AAE68-9E18-4EF4-A257-995722F877C2</key>
+		<key>DDDF4128-DC08-41C8-B5DB-B941DD450A90</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://invivogit.no-ip.org//git/spokennews.git</string>
+	<string>https://github.com/invivo/SpokenNews.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4F7AAE68-9E18-4EF4-A257-995722F877C2</string>
+	<string>DDDF4128-DC08-41C8-B5DB-B941DD450A90</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4F7AAE68-9E18-4EF4-A257-995722F877C2</string>
+			<string>DDDF4128-DC08-41C8-B5DB-B941DD450A90</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SpokenNews-Audio-Fixed</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4F7AAE68-9E18-4EF4-A257-995722F877C2</string>
-			<key>IDESourceControlWCCName</key>
-			<string>SpokenNews-Audio-Fixed</string>
+			<string>source</string>
 		</dict>
 	</array>
 </dict>
